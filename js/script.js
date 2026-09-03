@@ -61,6 +61,18 @@
     });
   });
 
+  // FAQ "show more" toggle (same expandable pattern as the feature columns)
+  var faqToggle = document.querySelector('.faq-toggle');
+  if (faqToggle) {
+    faqToggle.addEventListener('click', function () {
+      var faqList = document.querySelector('.faq-list');
+      var expanded = faqList.classList.toggle('is-expanded');
+      faqToggle.setAttribute('aria-expanded', String(expanded));
+      var label = faqToggle.querySelector('.read-more-label');
+      if (label) label.textContent = expanded ? 'Show fewer FAQs' : 'Show more FAQs';
+    });
+  }
+
   // FAQ accordion
   document.querySelectorAll('.faq-item').forEach(function (item) {
     var question = item.querySelector('.faq-question');
