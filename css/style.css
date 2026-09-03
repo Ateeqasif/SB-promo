@@ -471,7 +471,8 @@ img, svg { display: block; max-width: 100%; }
 .section-dark .text-cta:hover { color: #ffb84d; }
 .text-cta:hover svg { transform: translateX(4px); }
 .prose p { font-size: 1.02rem; }
-.prose .tagline {
+.prose .tagline,
+.tagline {
   font-family: var(--font-head);
   font-weight: 800;
   color: var(--orange);
@@ -479,6 +480,65 @@ img, svg { display: block; max-width: 100%; }
   margin: 28px 0 8px;
 }
 .section-dark .prose .tagline { color: var(--orange); }
+
+/* Merged feature columns — light editorial copy with expandable "read more" */
+.feature-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  align-items: stretch;
+}
+.feature-col {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+}
+.feature-col:not(:first-child) { border-left: 1px solid var(--line); }
+.feature-col h3 {
+  font-size: 1.28rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+.feature-excerpt p,
+.feature-more p { font-size: 1rem; color: var(--ink-soft); }
+.feature-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+.feature-more-inner { overflow: hidden; }
+.feature-more-inner p:first-child { margin-top: 14px; }
+.feature-col.is-expanded .feature-more { grid-template-rows: 1fr; }
+
+.read-more-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.read-more-toggle:hover { color: var(--orange); }
+.read-more-toggle svg { transition: transform 0.25s ease; }
+.feature-col.is-expanded .read-more-toggle svg { transform: rotate(180deg); }
+
+.feature-col .prose-cta { text-align: left; margin-top: auto; padding-top: 26px; }
+.feature-col .text-cta { font-size: 0.92rem; }
+
+@media (max-width: 900px) {
+  .feature-columns { grid-template-columns: 1fr; gap: 44px; }
+  .feature-col { padding: 0; }
+  .feature-col:not(:first-child) { border-left: none; border-top: 1px solid var(--line); padding-top: 40px; }
+}
 
 /* FAQ accordion */
 .faq-list { max-width: 760px; margin: 0 auto; }

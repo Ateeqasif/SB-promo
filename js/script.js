@@ -50,6 +50,17 @@
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  // Read more / read less toggles (merged feature columns)
+  document.querySelectorAll('.read-more-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var col = btn.closest('.feature-col');
+      var expanded = col.classList.toggle('is-expanded');
+      btn.setAttribute('aria-expanded', String(expanded));
+      var label = btn.querySelector('.read-more-label');
+      if (label) label.textContent = expanded ? 'Read less' : 'Read more';
+    });
+  });
+
   // FAQ accordion
   document.querySelectorAll('.faq-item').forEach(function (item) {
     var question = item.querySelector('.faq-question');
