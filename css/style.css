@@ -460,6 +460,60 @@ img, svg { display: block; max-width: 100%; }
   font-weight: 600;
 }
 
+/* Editorial/prose sections (light-and-view copy, process ethos, motorization) */
+.prose {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.prose p { font-size: 1.02rem; }
+.prose .tagline {
+  font-family: var(--font-head);
+  font-weight: 800;
+  color: var(--orange);
+  font-size: 1.2rem;
+  margin: 28px 0 8px;
+}
+.section-dark .prose .tagline { color: var(--orange); }
+
+/* FAQ accordion */
+.faq-list { max-width: 760px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.section-dark .faq-item { border-bottom-color: rgba(255,255,255,0.12); }
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 20px 4px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.section-dark .faq-question { color: #fff; }
+.faq-icon {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--paper-soft);
+  color: var(--orange-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.section-dark .faq-icon { background: rgba(255,255,255,0.1); color: var(--orange); }
+.faq-item.is-open .faq-icon { transform: rotate(45deg); background: var(--orange); color: #fff; }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.28s ease; }
+.faq-answer p { padding: 0 4px 20px; font-size: 0.95rem; margin: 0; }
+.section-dark .faq-answer p { color: #b7b2a8; }
+.faq-item.is-open .faq-answer { max-height: 260px; }
+
 /* Process — "One Simple Journey" */
 .process-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
 .process-row-3 { grid-template-columns: repeat(3, 1fr); }

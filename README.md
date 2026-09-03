@@ -1,17 +1,33 @@
-# SlickBlinds — Lead Page (Short Format)
+# SlickBlinds — Paid-Ads Landing Pages
 
-A self-contained, static lead-generation landing page for **SlickBlinds**, built as plain HTML/CSS/JS (no build step) so it can be deployed anywhere — GitHub Pages, Netlify, Vercel, or any static host.
+A set of self-contained, static lead-generation landing pages for **SlickBlinds**, built as plain HTML/CSS/JS (no build step) so they can be deployed anywhere — GitHub Pages, Netlify, Vercel, or any static host. Each page targets a different market/campaign; they share `css/style.css`, `js/script.js`, and the video assets.
 
-## Content
+## Pages
 
-Page copy matches the client-approved "Lead Page (Short Format)" brief exactly — no additional sections, claims, stats, or testimonials beyond what's specified there:
+### `index.html` — Houston (short format)
+
+Matches the client-approved "Lead Page (Short Format)" brief exactly — no additional sections, claims, stats, or testimonials beyond what's specified there:
 
 1. **Hero** — "Custom Blinds & Shades in Houston, TX" / "Window Treatments Made for Your Home" + intro copy + "Get Your Free Consultation" CTA
 2. **Everything You Need for Your Windows** — the 8 listed product types (custom blinds, Roller Shades, Dual View Zebra Shades, Thermacell Cellular Shades, Roman Shades, Drapes & Sheers, Estate Shutters, Motorized Window Treatments)
-3. **One Simple Journey** — the 3-step process (Free Consultation → Precise Measurement → Expert Installation)
+3. **One Simple Journey** — the 3-step process (Free Consultation → Precise Measurement → Expert Installation), merged into one continuous video-background block with the Final CTA
 4. **Final CTA** — "Ready to Find the Right Window Treatments?" + "Start Your Window Treatment Journey"
 
-The lead-capture form behind both CTAs (2-step: product type + zip → contact info) is a functional/UX element, not page copy — it fulfills what "Get Your Free Consultation" promises.
+### `katy.html` — Katy & Cinco Ranch (long format)
+
+Built from the "landing_pages_paid_ads.docx" brief, which specs six geo-targeted paid-ads pages (Katy/Cinco Ranch, Richmond/Rosenberg, Cypress/Bridgeland, each with a base + motorization variant). Only the Katy/Cinco Ranch base page is built so far; the other five are not yet implemented — ask if you want them added as separate pages following the same pattern. Sections, in order:
+
+1. **Hero** — "Custom Blinds & Shades in Katy & Cinco Ranch" / "Window Treatments Made for Your Home, Your Light, Your Life"
+2. **Custom Blinds & Shades for Katy Homes** — the 9 listed product types
+3. **Designed Around Katy's Light** — glare/heat/privacy editorial
+4. **Custom Means More Than Choosing a Color** — "Measure. Understand. Recommend." process framing
+5. **Motorization for Hard-to-Reach Windows and Everyday Comfort** — Gamana Tech callout
+6. **Final CTA** — "Your Katy Home. Your Windows. A More Thoughtful Fit." + "Book Your Free In-Home Consultation"
+7. **Local FAQs: Katy & Cinco Ranch** — 10-question accordion
+
+All copy is verbatim from the brief document.
+
+The lead-capture form behind both pages' CTAs (2-step: product type + zip → contact info) is a functional/UX element, not page copy.
 
 ## Brand reference
 
@@ -44,10 +60,12 @@ Colors, logo, and typography match the official SlickBlinds brand reference shee
 ## Structure
 
 ```
-index.html            Page markup
-css/style.css         Full stylesheet (design tokens, layout, responsive)
-js/script.js          Mobile nav, scroll reveal, 2-step form, cookie notice
-assets/hero-video.mp4 Hero background video (looping)
+index.html               Houston page markup
+katy.html                Katy & Cinco Ranch page markup
+css/style.css            Shared stylesheet (design tokens, layout, responsive)
+js/script.js             Shared: mobile nav, scroll reveal, FAQ accordion, 2-step form, cookie notice
+assets/hero-video.mp4    Hero background video (looping), used by both pages
+assets/journey-video.mp4 Final-CTA background video (looping), used by both pages
 ```
 
 ## Running locally

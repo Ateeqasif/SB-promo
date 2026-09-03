@@ -50,6 +50,22 @@
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var question = item.querySelector('.faq-question');
+    question.addEventListener('click', function () {
+      var wasOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item.is-open').forEach(function (openItem) {
+        openItem.classList.remove('is-open');
+        openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('is-open');
+        question.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
   // Lead form (client-side demo only — no backend wired up)
   var quoteForm = document.getElementById('quoteForm');
   if (quoteForm) {
