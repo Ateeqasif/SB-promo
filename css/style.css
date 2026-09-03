@@ -164,6 +164,12 @@ img, svg { display: block; max-width: 100%; }
 }
 .logo .logo-light { font-weight: 400; margin-right: 2px; letter-spacing: 0.06em; }
 .logo .logo-bold { font-weight: 800; letter-spacing: 0.02em; }
+/* Muted monochrome variant — light-grey border and wordmark, for the dark footer */
+.logo-dark {
+  background: transparent;
+  border-color: rgba(222, 226, 230, 0.35);
+}
+.logo-dark, .logo-dark .logo-light, .logo-dark .logo-bold { color: #DEE2E6; }
 
 .main-nav { display: flex; gap: 22px; align-items: center; }
 /* Navigation 13/20px Regular 400 per brand type spec */
