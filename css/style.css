@@ -435,6 +435,7 @@ img, svg { display: block; max-width: 100%; }
 /* Process — "One Simple Journey" */
 .process-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
 .process-row-3 { grid-template-columns: repeat(3, 1fr); }
+.journey-cta { text-align: center; margin-top: 48px; }
 .process-step { text-align: center; padding: 0 8px; }
 .step-num {
   width: 54px; height: 54px;
