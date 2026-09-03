@@ -409,6 +409,7 @@ img, svg { display: block; max-width: 100%; }
 
 /* ---------- Sections ---------- */
 .section { padding: 96px 0; }
+.section-tight-top { padding-top: 32px; }
 .section-dark { background: var(--black); }
 .section-dark h2 { color: #fff; }
 .section-dark p { color: #b7b2a8; }
@@ -467,6 +468,7 @@ img, svg { display: block; max-width: 100%; }
   max-width: 720px;
   margin: 0 auto;
 }
+.prose-wide { max-width: 960px; }
 .prose p { font-size: 1.02rem; }
 .prose .tagline {
   font-family: var(--font-head);
