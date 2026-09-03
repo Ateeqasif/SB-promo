@@ -236,32 +236,36 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* ---------- Hero ---------- */
-/* Imagery treatment per brand guide: warm neutral "photography" (approximated
-   here — no licensed photo available) with hero copy in white over a
-   black 70% -> 0% fade, per the real site's scrim pattern. */
+/* Imagery treatment per brand guide: premium interior, window treatment as
+   the visual focus, hero copy in white over a black 70% -> 0% fade scrim.
+   No licensed photo available, so an illustrated SVG scene (window, dual-view
+   zebra shade, sheer curtains, outdoor view) stands in — swap `.hero-bg` for
+   a real <img> when a photo is available. */
 .hero {
   position: relative;
   padding: 64px 0 0;
   scroll-margin-top: 90px;
   overflow: hidden;
-  background: linear-gradient(120deg, #8a7256 0%, #a9906d 40%, #cbb48c 100%);
+  background: #e6dac6;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(32,36,40,0.72) 0%, rgba(32,36,40,0.42) 45%, rgba(32,36,40,0.05) 78%);
-  pointer-events: none;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(180deg, rgba(255,255,255,0.06) 0 12px, transparent 12px 40px);
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(32,36,40,0.78) 0%, rgba(32,36,40,0.5) 45%, rgba(32,36,40,0.08) 78%);
   pointer-events: none;
 }
 .hero-inner {
   position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 56px;
