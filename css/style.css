@@ -151,6 +151,7 @@ img, svg { display: block; max-width: 100%; }
 .logo {
   display: inline-flex;
   align-items: center;
+  background: #fff;
   border: 2px solid var(--orange);
   border-radius: 8px;
   padding: 7px 14px;
@@ -163,12 +164,6 @@ img, svg { display: block; max-width: 100%; }
 }
 .logo .logo-light { font-weight: 400; margin-right: 2px; letter-spacing: 0.06em; }
 .logo .logo-bold { font-weight: 800; letter-spacing: 0.02em; }
-/* Dark variant — wordmark #DEE2E6 on #202428, used on dark footer */
-.logo-dark {
-  background: var(--black);
-  border-color: var(--orange);
-}
-.logo-dark, .logo-dark .logo-light, .logo-dark .logo-bold { color: #DEE2E6; }
 
 .main-nav { display: flex; gap: 22px; align-items: center; }
 /* Navigation 13/20px Regular 400 per brand type spec */
@@ -630,8 +625,8 @@ img, svg { display: block; max-width: 100%; }
 .site-footer { background: #141312; color: #9c9689; padding: 64px 0 0; }
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.8fr 1fr 0.8fr 1fr;
+  gap: 32px;
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
