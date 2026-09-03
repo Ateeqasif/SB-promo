@@ -537,7 +537,14 @@ img, svg { display: block; max-width: 100%; }
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-.footer-inner-short { grid-template-columns: 1.4fr 1fr; }
+.footer-inner-short {
+  grid-template-columns: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+}
+.footer-inner-short .footer-brand,
+.footer-inner-short .footer-col { flex: 0 1 340px; }
 .footer-brand .logo { margin-bottom: 12px; }
 .footer-brand p { font-size: 0.88rem; max-width: 30ch; }
 .footer-col h4 {
@@ -588,10 +595,10 @@ img, svg { display: block; max-width: 100%; }
   .hero-form { position: static; }
   .process-row, .process-row-3 { grid-template-columns: repeat(2, 1fr); gap: 40px 26px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
-  .footer-inner-short { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 760px) {
+  .btn { white-space: normal; text-align: center; }
   .main-nav { display: none; }
   .header-phone span { display: none; }
   .nav-toggle { display: flex; }
