@@ -412,6 +412,31 @@ img, svg { display: block; max-width: 100%; }
 .section-dark p { color: #b7b2a8; }
 .section-dark .eyebrow { color: var(--orange); }
 
+/* One Simple Journey — looping background video with a flat 50% black overlay */
+.journey-section {
+  position: relative;
+  overflow: hidden;
+}
+.journey-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+.journey-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.journey-section > .container {
+  position: relative;
+  z-index: 2;
+}
+
 .section-head { max-width: 640px; margin: 0 auto 54px; text-align: center; }
 .section-head h2 { font-size: clamp(1.7rem, 2.8vw, 2.4rem); }
 .section-head p { font-size: 1.02rem; }
