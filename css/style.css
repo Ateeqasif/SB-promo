@@ -451,6 +451,25 @@ img, svg { display: block; max-width: 100%; }
   margin: 0 auto;
 }
 .prose-wide { max-width: 960px; }
+
+/* Lightweight text-link CTA — animated arrow, no button chrome */
+.prose-cta { text-align: center; margin-top: 32px; }
+.text-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--orange);
+  border-bottom: 2px solid rgba(241, 134, 5, 0.3);
+  padding-bottom: 3px;
+  transition: gap 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.text-cta svg { transition: transform 0.2s ease; flex-shrink: 0; }
+.text-cta:hover { gap: 14px; border-color: var(--orange); color: var(--orange-dark); }
+.section-dark .text-cta:hover { color: #ffb84d; }
+.text-cta:hover svg { transform: translateX(4px); }
 .prose p { font-size: 1.02rem; }
 .prose .tagline {
   font-family: var(--font-head);
