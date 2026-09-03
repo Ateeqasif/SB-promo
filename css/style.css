@@ -1,5 +1,5 @@
 /* ============================================
-   SlickBlinds — Promotional Landing Page
+   SlickBlinds — Lead Page (Short Format)
    Colors, type and CTA spec are exact values from the
    official SlickBlinds brand reference (verified 03 Sep 2026,
    sourced from slickblinds.com live CSS + site assets).
@@ -14,8 +14,7 @@
   --orange: #F18605;       /* Logo orange — logo border, accents */
   --orange-digital: #F08605; /* Digital orange — announcement bar gradient end */
   --orange-dark: #DF6C07;   /* Orange dark — announcement bar gradient start, hovers */
-  --orange-tint: #FFF7E0;  /* Warm surface — icon chips, stat card bg */
-  --cream: #FFF7E0;         /* Warm surface */
+  --orange-tint: #FFF7E0;  /* Warm surface — icon chips, tag chips */
   --black: #202428;         /* Ink — headings, primary CTA fill */
   --black-soft: #2E3338;
   --ink: #202428;
@@ -24,8 +23,6 @@
   --paper-soft: #FAFAFA;
   --line: #CED4DA;          /* Border */
   --on-dark: #F9FAFB;
-  --gold: #F5A623;
-  --avatar-bg: #FFF7E0;
 
   --font-head: 'Manrope', 'Montserrat', sans-serif; /* Neue Regrade fallback */
   --font-body: 'Montserrat', sans-serif;
@@ -127,17 +124,6 @@ img, svg { display: block; max-width: 100%; }
   box-shadow: var(--shadow-btn);
 }
 .btn-primary:hover { background: var(--black-soft); transform: translateY(-1px); }
-.btn-accent {
-  background: var(--orange);
-  color: #fff;
-}
-.btn-accent:hover { background: var(--orange-dark); transform: translateY(-1px); box-shadow: var(--shadow-md); }
-.btn-ghost {
-  background: transparent;
-  border-color: rgba(255,255,255,0.4);
-  color: inherit;
-}
-.btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
 .btn-sm { padding: 9px 18px; font-size: 0.8rem; }
 .btn-lg { padding: 14px 32px; font-size: 0.92rem; }
 .btn-full { width: 100%; }
@@ -290,39 +276,7 @@ img, svg { display: block; max-width: 100%; }
 }
 .hero-copy .accent { color: var(--orange); }
 .hero-sub { color: #d8d2c8; font-size: 1.06rem; max-width: 46ch; }
-
-.hero-bullets { margin: 26px 0; display: flex; flex-direction: column; gap: 12px; }
-.hero-bullets li {
-  color: #e7e2d8;
-  font-size: 0.95rem;
-  padding-left: 28px;
-  position: relative;
-}
-.hero-bullets li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--orange);
-  font-weight: 800;
-}
-
-.review-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.16);
-  padding: 10px 16px;
-  border-radius: 999px;
-  color: #fff;
-  font-size: 0.9rem;
-}
-.review-badge .stars { color: var(--gold); letter-spacing: 1px; font-size: 0.9rem; }
-.review-badge strong { font-family: var(--font-head); }
-.review-badge .review-count { color: #c9c2b6; }
-
-.stars { color: var(--gold); letter-spacing: 2px; }
+.hero-sub strong { color: #fff; }
 
 /* Hero lead form (2-step, mirrors real site UX) */
 .hero-form {
@@ -443,74 +397,10 @@ img, svg { display: block; max-width: 100%; }
 .quote-form.is-submitted > h3,
 .quote-form.is-submitted > .form-sub { display: none; }
 
-/* ---------- Contact info strip ---------- */
-.contact-strip { background: var(--paper); border-bottom: 1px solid var(--line); }
-.contact-inner {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 32px 0;
-}
-.contact-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.contact-icon {
-  width: 46px; height: 46px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: var(--orange-tint);
-  color: var(--orange-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.contact-card strong { display: block; font-size: 0.94rem; color: var(--black); }
-.contact-card span { font-size: 0.82rem; color: var(--ink-soft); }
-
-/* ---------- Trust stats bar ---------- */
-.trust-bar { background: var(--black); }
-.trust-inner {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: center;
-}
-.trust-item {
-  padding: 30px 10px;
-  border-right: 1px solid rgba(255,255,255,0.08);
-}
-.trust-item:last-child { border-right: none; }
-.trust-item strong {
-  display: block;
-  font-family: var(--font-head);
-  font-size: 1.7rem;
-  color: var(--orange);
-}
-.trust-item span { color: #b7b2a8; font-size: 0.82rem; }
-
-/* ---------- Badge strip ---------- */
-.badge-strip { background: var(--paper-soft); border-bottom: 1px solid var(--line); }
-.badge-strip-inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 34px;
-  padding: 26px 24px;
-}
-.badge-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.86rem;
-  font-weight: 700;
-  color: var(--black);
-}
-
 /* ---------- Sections ---------- */
 .section { padding: 96px 0; }
 .section-dark { background: var(--black); }
-.section-dark h2, .section-dark .why-item h3 { color: #fff; }
+.section-dark h2 { color: #fff; }
 .section-dark p { color: #b7b2a8; }
 .section-dark .eyebrow { color: var(--orange); }
 
@@ -518,37 +408,35 @@ img, svg { display: block; max-width: 100%; }
 .section-head h2 { font-size: clamp(1.7rem, 2.8vw, 2.4rem); }
 .section-head p { font-size: 1.02rem; }
 
-.grid { display: grid; gap: 26px; }
-.grid-2 { grid-template-columns: 1fr 1fr; }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-
-/* Product cards */
-.product-card {
-  padding: 30px 26px;
-  border: 1px solid var(--line);
-  box-shadow: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Product tags — "Everything You Need for Your Windows" */
+.product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.icon-wrap { width: 56px; height: 56px; margin-bottom: 16px; }
-.icon-wrap svg { width: 100%; height: 100%; }
-.product-card h3 { font-size: 1.12rem; margin-bottom: 8px; }
-.product-card p { font-size: 0.92rem; margin: 0; }
+.product-tag {
+  background: var(--orange-tint);
+  color: var(--orange-dark);
+  border: 1px solid rgba(241, 134, 5, 0.25);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
 
-/* Why grid */
-.why-grid { gap: 34px 46px; }
-.why-item h3 { font-size: 1.08rem; color: var(--orange); margin-bottom: 8px; }
-.why-item p { font-size: 0.95rem; }
-
-/* Process */
+/* Process — "One Simple Journey" */
 .process-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+.process-row-3 { grid-template-columns: repeat(3, 1fr); }
 .process-step { text-align: center; padding: 0 8px; }
 .step-num {
   width: 54px; height: 54px;
   margin: 0 auto 18px;
   border-radius: 50%;
-  background: var(--black);
-  color: var(--orange);
+  background: var(--orange);
+  color: var(--black);
   font-family: var(--font-head);
   font-weight: 700;
   font-size: 1.2rem;
@@ -556,126 +444,8 @@ img, svg { display: block; max-width: 100%; }
   align-items: center;
   justify-content: center;
 }
-.process-step h3 { font-size: 1.03rem; }
+.process-step h3 { color: #fff; font-size: 1.03rem; }
 .process-step p { font-size: 0.9rem; }
-
-/* Reviews */
-.review-google {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-align: center;
-}
-.google-word { font-family: var(--font-head); font-weight: 800; font-size: 1.6rem; }
-.google-word span:nth-child(1) { color: #4285F4; }
-.google-word span:nth-child(2) { color: #EA4335; }
-.google-word span:nth-child(3) { color: #FBBC05; }
-.google-word span:nth-child(4) { color: #4285F4; }
-.google-word span:nth-child(5) { color: #34A853; }
-.google-word span:nth-child(6) { color: #EA4335; }
-.google-rating { display: flex; align-items: center; gap: 8px; }
-.google-rating strong { font-family: var(--font-head); font-size: 1.5rem; }
-.review-google-label { font-size: 0.82rem; color: var(--ink-soft); font-weight: 600; }
-
-.stats-card {
-  background: var(--cream);
-  border-radius: var(--radius-lg);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 30px 20px;
-  text-align: center;
-  gap: 12px;
-}
-.stats-card .stat strong {
-  display: block;
-  font-family: var(--font-head);
-  font-size: 1.9rem;
-  color: var(--black);
-}
-.stats-card .stat span { font-size: 0.85rem; color: var(--ink-soft); font-weight: 600; }
-
-.review-lockup {
-  display: grid;
-  grid-template-columns: 0.8fr 1.6fr;
-  gap: 30px;
-  align-items: center;
-  margin-bottom: 46px;
-}
-
-.review-card {
-  padding: 26px;
-  border: 1px solid var(--line);
-  box-shadow: none;
-  background: var(--paper);
-}
-.review-card .reviewer { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-.avatar {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--avatar-bg);
-  color: var(--orange-dark);
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 0.85rem;
-  font-family: var(--font-head);
-  flex-shrink: 0;
-}
-.reviewer strong { display: block; font-size: 0.95rem; color: var(--black); }
-.reviewer span { font-size: 0.8rem; color: var(--ink-soft); }
-.review-card .stars { display: block; margin-bottom: 10px; font-size: 0.9rem; }
-.review-card p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
-
-/* Financing / mid CTA banner */
-.financing-banner {
-  background: linear-gradient(120deg, var(--black) 0%, #322a20 100%);
-  padding: 56px 0;
-}
-.financing-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-.financing-copy { max-width: 560px; }
-.financing-copy h2 { color: #fff; font-size: clamp(1.4rem, 2.4vw, 1.9rem); margin-bottom: 8px; }
-.financing-copy p { color: #b7b2a8; margin: 0; }
-
-/* FAQ */
-.faq-list { max-width: 760px; margin: 0 auto; }
-.faq-item { border-bottom: 1px solid var(--line); }
-.faq-question {
-  width: 100%;
-  background: none;
-  border: none;
-  text-align: left;
-  padding: 20px 4px;
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--black);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.faq-icon {
-  flex-shrink: 0;
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  background: var(--paper-soft);
-  color: var(--orange-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-.faq-item.is-open .faq-icon { transform: rotate(45deg); background: var(--orange); color: #fff; }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.28s ease; }
-.faq-answer p { padding: 0 4px 20px; font-size: 0.95rem; margin: 0; }
-.faq-item.is-open .faq-answer { max-height: 220px; }
 
 /* Final CTA */
 .final-cta {
@@ -696,6 +466,7 @@ img, svg { display: block; max-width: 100%; }
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
+.footer-inner-short { grid-template-columns: 1.4fr 1fr; }
 .footer-brand .logo { margin-bottom: 12px; }
 .footer-brand p { font-size: 0.88rem; max-width: 30ch; }
 .footer-col h4 {
@@ -744,11 +515,9 @@ img, svg { display: block; max-width: 100%; }
 @media (max-width: 980px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-form { position: static; }
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
-  .process-row { grid-template-columns: repeat(2, 1fr); gap: 40px 26px; }
+  .process-row, .process-row-3 { grid-template-columns: repeat(2, 1fr); gap: 40px 26px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
-  .contact-inner { grid-template-columns: 1fr; }
-  .review-lockup { grid-template-columns: 1fr; }
+  .footer-inner-short { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 760px) {
@@ -778,16 +547,9 @@ img, svg { display: block; max-width: 100%; }
 
   .hero { padding: 46px 0 0; }
   .pill-group { grid-template-columns: repeat(2, 1fr); }
-  .trust-inner { grid-template-columns: repeat(2, 1fr); }
-  .trust-item:nth-child(2) { border-right: none; }
-  .trust-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
 
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .process-row { grid-template-columns: 1fr; }
+  .process-row, .process-row-3 { grid-template-columns: 1fr; }
   .section { padding: 64px 0; }
 
-  .financing-inner { text-align: center; justify-content: center; }
-  .stats-card { grid-template-columns: 1fr; }
-
-  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer-inner, .footer-inner-short { grid-template-columns: 1fr; gap: 32px; }
 }

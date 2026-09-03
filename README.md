@@ -1,22 +1,33 @@
-# SlickBlinds — Promotional Landing Page
+# SlickBlinds — Lead Page (Short Format)
 
-A self-contained, static promotional landing page for **SlickBlinds**, built as plain HTML/CSS/JS (no build step) so it can be deployed anywhere — GitHub Pages, Netlify, Vercel, or any static host.
+A self-contained, static lead-generation landing page for **SlickBlinds**, built as plain HTML/CSS/JS (no build step) so it can be deployed anywhere — GitHub Pages, Netlify, Vercel, or any static host.
+
+## Content
+
+Page copy matches the client-approved "Lead Page (Short Format)" brief exactly — no additional sections, claims, stats, or testimonials beyond what's specified there:
+
+1. **Hero** — "Custom Blinds & Shades in Houston, TX" / "Window Treatments Made for Your Home" + intro copy + "Get Your Free Consultation" CTA
+2. **Everything You Need for Your Windows** — the 8 listed product types (custom blinds, Roller Shades, Dual View Zebra Shades, Thermacell Cellular Shades, Roman Shades, Drapes & Sheers, Estate Shutters, Motorized Window Treatments)
+3. **One Simple Journey** — the 3-step process (Free Consultation → Precise Measurement → Expert Installation)
+4. **Final CTA** — "Ready to Find the Right Window Treatments?" + "Start Your Window Treatment Journey"
+
+The lead-capture form behind both CTAs (2-step: product type + zip → contact info) is a functional/UX element, not page copy — it fulfills what "Get Your Free Consultation" promises.
 
 ## Brand reference
 
-Built to match the real SlickBlinds brand (`slickblinds.com`), using the official brand reference sheet (verified 03 Sep 2026) plus real site screenshots:
+Colors, logo, and typography match the official SlickBlinds brand reference sheet (verified 03 Sep 2026):
 
 **Colors** (exact hex from brand sheet)
 
 | Token | Hex | Use |
 |---|---|---|
-| Logo orange | `#F18605` | Logo border, accent icons |
+| Logo orange | `#F18605` | Logo border, accent tags |
 | Digital orange | `#F08605` | Announcement bar gradient end |
 | Orange dark | `#DF6C07` | Announcement bar gradient start, hovers |
 | Ink | `#202428` | Headings, primary CTA fill |
 | Body slate | `#6D767E` | Body copy |
 | On-dark | `#F9FAFB` | Text on dark/CTA fills |
-| Warm surface | `#FFF7E0` | Stat card background, icon chips |
+| Warm surface | `#FFF7E0` | Product tag chips |
 | Border | `#CED4DA` | Hairlines, input borders |
 
 **Typography**
@@ -30,23 +41,12 @@ Built to match the real SlickBlinds brand (`slickblinds.com`), using the officia
 
 **Imagery treatment** — real site uses premium interior photography with a black 70%→0% fade behind white hero copy. No licensed photo is available here, so the hero uses an approximated warm-toned gradient with the same scrim treatment — replace `.hero` background in `css/style.css` with a real photo when available.
 
-**Content** — real contact info (phone, email, Cypress TX address), the actual Google 4.9 rating, and real testimonials (Natarajan Srinivasan, Megan Khotko, Bruce White) pulled from the live site are used as-is.
-
-## Structural approach
-
-Page length/flow (lead form in hero, trust stats, process steps, testimonials, FAQ, final CTA) is informed by competitor research (3 Day Blinds, Stoneside, Gotcha Covered, a Minneapolis blinds company) — a proven pattern in the window-treatments lead-gen space:
-
-- Lead-capture form embedded directly in the hero (2-step, matching the real site's "Fill Your Details Below" flow: product-type pills → address/zip → contact info).
-- Phone number visible everywhere (announcement bar, header, contact strip, footer).
-- Hard trust stats and a Google review badge for social proof.
-- Consultation-first, no-obligation language throughout.
-
 ## Structure
 
 ```
 index.html      Page markup
 css/style.css   Full stylesheet (design tokens, layout, responsive)
-js/script.js    Mobile nav, scroll reveal, FAQ accordion, 2-step form, cookie notice
+js/script.js    Mobile nav, scroll reveal, 2-step form, cookie notice
 ```
 
 ## Running locally
