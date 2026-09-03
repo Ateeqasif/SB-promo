@@ -238,8 +238,8 @@ img, svg { display: block; max-width: 100%; }
 /* ---------- Hero ---------- */
 /* Imagery treatment per brand guide: premium interior, window treatment as
    the visual focus, hero copy in white over a black 70% -> 0% fade scrim.
-   `.hero-bg` is currently a temporary Canva-hosted export URL (~19h signed
-   link) — replace its src with a permanently-hosted copy before it expires. */
+   `.hero-bg` is a looping background video (assets/hero-video.mp4),
+   autoplay/muted/loop/playsinline for cross-browser/mobile autoplay. */
 .hero {
   position: relative;
   min-height: 88vh;
