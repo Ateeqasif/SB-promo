@@ -128,24 +128,6 @@ img, svg { display: block; max-width: 100%; }
 .btn-lg { padding: 14px 32px; font-size: 0.92rem; }
 .btn-full { width: 100%; }
 
-/* ---------- Promo bar ---------- */
-/* Announcement bar — exact brand gradient #DF6C07 → #F08605 */
-.promo-bar {
-  background: linear-gradient(90deg, var(--orange-dark) 0%, var(--orange-digital) 100%);
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 10px 0;
-}
-.promo-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.promo-bar a { color: #fff; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
-
 /* ---------- Header ---------- */
 .site-header {
   position: sticky;
@@ -610,7 +592,6 @@ img, svg { display: block; max-width: 100%; }
 }
 
 @media (max-width: 760px) {
-  .promo-inner { justify-content: center; text-align: center; }
   .main-nav { display: none; }
   .header-phone span { display: none; }
   .nav-toggle { display: flex; }
