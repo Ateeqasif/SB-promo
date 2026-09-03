@@ -546,6 +546,8 @@ img, svg { display: block; max-width: 100%; }
 }
 .final-cta h2 { color: #fff; font-size: clamp(1.7rem, 3vw, 2.3rem); max-width: 680px; margin: 0 auto 12px; }
 .final-cta p { color: #b7b2a8; margin-bottom: 30px; }
+.final-cta .btn-primary { background: var(--orange); color: #fff; }
+.final-cta .btn-primary:hover { background: var(--orange-dark); }
 
 /* ---------- Footer ---------- */
 .site-footer { background: #141312; color: #9c9689; padding: 64px 0 0; }
