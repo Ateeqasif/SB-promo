@@ -69,6 +69,43 @@
   // Lead form (client-side demo only — no backend wired up)
   var quoteForm = document.getElementById('quoteForm');
   if (quoteForm) {
+    // Product-type pill selector (single-select)
+    var pillGroup = document.getElementById('productPills');
+    if (pillGroup) {
+      pillGroup.addEventListener('click', function (e) {
+        var pill = e.target.closest('.pill-option');
+        if (!pill) return;
+        pillGroup.querySelectorAll('.pill-option').forEach(function (p) {
+          p.classList.remove('is-selected');
+        });
+        pill.classList.add('is-selected');
+      });
+    }
+
+    var step1 = document.getElementById('formStep1');
+    var step2 = document.getElementById('formStep2');
+    var zipInput = document.getElementById('zip');
+
+    var toStep2 = document.getElementById('toStep2');
+    if (toStep2) {
+      toStep2.addEventListener('click', function () {
+        if (!zipInput.checkValidity()) {
+          zipInput.reportValidity();
+          return;
+        }
+        step1.classList.remove('is-active');
+        step2.classList.add('is-active');
+      });
+    }
+
+    var backToStep1 = document.getElementById('backToStep1');
+    if (backToStep1) {
+      backToStep1.addEventListener('click', function () {
+        step2.classList.remove('is-active');
+        step1.classList.add('is-active');
+      });
+    }
+
     quoteForm.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!quoteForm.checkValidity()) {
