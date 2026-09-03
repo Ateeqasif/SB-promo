@@ -39,7 +39,11 @@ Colors, logo, and typography match the official SlickBlinds brand reference shee
 
 **Primary CTA button** — exact spec: fill `#202428`, text `#F9FAFB`, 10px radius, 10×22px padding, shadow `0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1)`.
 
-**Imagery treatment** — real site uses premium interior photography with a black 70%→0% fade behind white hero copy. No licensed photo is available here, so the hero uses an approximated warm-toned gradient with the same scrim treatment — replace `.hero` background in `css/style.css` with a real photo when available.
+**Imagery treatment** — real site uses premium interior photography with a black 70%→0% fade behind white hero copy. The hero (`.hero-bg` in `index.html`) currently points to an AI-generated photo (living room, dual-view zebra shades, sheer curtains, garden view) exported from Canva as a **temporary signed URL (~19h validity from generation)**. Before that expires:
+1. Download the image from the Canva export URL (or regenerate via Canva) and save it to `assets/hero-photo.jpg` in this repo.
+2. Update `.hero-bg`'s `src` in `index.html` to the local path.
+
+Swap in a real licensed photo the same way when one is available.
 
 ## Structure
 
@@ -63,7 +67,7 @@ Then open the printed local URL in your browser.
 
 ## Notes / before going live
 
-- Swap the hero background for a real interior photo (see Imagery treatment above).
+- The hero photo is a temporary Canva export URL — replace it with a permanently-hosted copy before it expires (see Imagery treatment above).
 - If you have a Neue Regrade license, add it via `@font-face` and update `--font-head` in `css/style.css`.
 - The lead form is client-side only (shows a success state on submit); wire it up to a real backend, CRM, or form service (e.g. Formspree, a serverless function) before launch.
 - Pull exact hex values from DevTools against the live site if you want to double-check any of the estimates noted above.

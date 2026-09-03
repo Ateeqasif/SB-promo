@@ -238,9 +238,8 @@ img, svg { display: block; max-width: 100%; }
 /* ---------- Hero ---------- */
 /* Imagery treatment per brand guide: premium interior, window treatment as
    the visual focus, hero copy in white over a black 70% -> 0% fade scrim.
-   No licensed photo available, so an illustrated SVG scene (window, dual-view
-   zebra shade, sheer curtains, outdoor view) stands in — swap `.hero-bg` for
-   a real <img> when a photo is available. */
+   `.hero-bg` is currently a temporary Canva-hosted export URL (~19h signed
+   link) — replace its src with a permanently-hosted copy before it expires. */
 .hero {
   position: relative;
   padding: 64px 0 0;
@@ -253,6 +252,8 @@ img, svg { display: block; max-width: 100%; }
   inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: 68% center;
   z-index: 0;
 }
 .hero::before {
