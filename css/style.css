@@ -432,7 +432,7 @@ img, svg { display: block; max-width: 100%; }
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
-.journey-section > .container {
+.journey-section .container {
   position: relative;
   z-index: 2;
 }
@@ -483,10 +483,8 @@ img, svg { display: block; max-width: 100%; }
 
 /* Final CTA */
 .final-cta {
-  background: var(--black);
   padding: 90px 0;
   text-align: center;
-  background-image: radial-gradient(circle at 50% 0%, #322a20 0%, var(--black) 60%);
 }
 .final-cta h2 { color: #fff; font-size: clamp(1.7rem, 3vw, 2.3rem); max-width: 680px; margin: 0 auto 12px; }
 .final-cta p { color: #b7b2a8; margin-bottom: 30px; }
