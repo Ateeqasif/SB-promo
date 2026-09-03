@@ -285,7 +285,7 @@ img, svg { display: block; max-width: 100%; }
 .hero-copy .accent { color: var(--orange); }
 .hero-copy h1 .h1-sub { display: inline-block; font-size: 0.58em; font-weight: 700; }
 .nowrap { white-space: nowrap; }
-.hero-sub { color: #d8d2c8; font-size: 1.06rem; max-width: 46ch; text-align: justify; }
+.hero-sub { color: #d8d2c8; font-size: 1.06rem; max-width: 46ch; }
 .hero-sub strong { color: #fff; }
 
 /* Hero lead form (2-step, mirrors real site UX) */
