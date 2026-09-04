@@ -407,6 +407,22 @@ img, svg { display: block; max-width: 100%; }
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
+
+/* Image slider variant of the journey background (used on short.html) */
+.journey-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.journey-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.journey-slide.is-active { opacity: 1; }
 .journey-section .container {
   position: relative;
   z-index: 2;

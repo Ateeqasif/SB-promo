@@ -50,6 +50,17 @@
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  // Journey background slider (short.html) — auto-crossfades slides
+  var journeySlides = document.querySelectorAll('.journey-slide');
+  if (journeySlides.length > 1) {
+    var journeyIndex = 0;
+    setInterval(function () {
+      journeySlides[journeyIndex].classList.remove('is-active');
+      journeyIndex = (journeyIndex + 1) % journeySlides.length;
+      journeySlides[journeyIndex].classList.add('is-active');
+    }, 4000);
+  }
+
   // Read more / read less toggles (merged feature columns)
   document.querySelectorAll('.read-more-toggle').forEach(function (btn) {
     btn.addEventListener('click', function () {

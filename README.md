@@ -52,6 +52,8 @@ Colors, logo, and typography match the official SlickBlinds brand reference shee
 
 **Favicon** — `assets/images/favicon.svg`, referenced by both pages' `<link rel="icon">`. Replace the file to change it site-wide.
 
+**Journey slider (short.html)** — the "Stop Living With Windows You Don't Love" section's background is an auto-crossfading image slider (`.journey-slider` / `.journey-slide` in `css/style.css`, rotation logic in `js/script.js`), not a video. It currently points at 5 placeholder gradients: `assets/images/slider-1.svg` through `slider-5.svg`. Replace those 5 files directly (same filenames) with real room photos to swap the slideshow — add or remove `<div class="journey-slide">` entries in `short.html` to change the slide count. `index.html`'s equivalent Final CTA section still uses the looping `assets/videos/journey-video.mp4`, unchanged.
+
 **Primary CTA button** — exact spec: fill `#202428`, text `#F9FAFB`, 10px radius, 10×22px padding, shadow `0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1)`.
 
 **Imagery treatment** — real site uses premium interior photography with a black 70%→0% fade behind white hero copy. The hero (`.hero-bg` in `index.html`) is a looping background video at `assets/videos/hero-video.mp4` (H.264/AAC), autoplay/muted/loop/playsinline so it plays automatically across desktop and mobile browsers. Swap in a different video or licensed photo the same way when available.
