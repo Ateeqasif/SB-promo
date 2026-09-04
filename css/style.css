@@ -24,7 +24,7 @@
   --line: #CED4DA;          /* Border */
   --on-dark: #F9FAFB;
 
-  --font-head: 'Manrope', 'Montserrat', sans-serif; /* Neue Regrade fallback */
+  --font-head: 'Baloo 2', 'Manrope', 'Montserrat', sans-serif;
   --font-body: 'Montserrat', sans-serif;
 
   --radius: 14px;

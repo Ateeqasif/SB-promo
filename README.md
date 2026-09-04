@@ -45,7 +45,7 @@ Colors, logo, and typography match the official SlickBlinds brand reference shee
 
 **Typography**
 
-- Headings: **Neue Regrade** (ExtraBold 800) — this is a paid/commercial font not available via Google Fonts, so **Manrope** (ExtraBold 800, geometric, tight tracking) is used as the closest freely-licensed fallback. Swap in Neue Regrade via `@font-face` if you have a license.
+- Headings: **Baloo 2** (600/700/800), a rounded, friendly display face, loaded from Google Fonts. Falls back to Manrope, then Montserrat, then system sans-serif. Change `--font-head` in `css/style.css` to swap it.
 - Body / navigation / buttons: **Montserrat** — matches the real brand exactly, loaded from Google Fonts.
 
 **Logo** — a real image file, `assets/images/logo.svg` (header/light) and `assets/images/logo-footer.svg` (muted variant for the dark footer), matching the brand spec: `#F18605` border, `#212529` wordmark ("SLICK" regular + "BLINDS" ExtraBold), 8px radius; the footer variant is `#DEE2E6` wordmark on a transparent fill. Replace either file directly to swap the logo — no markup changes needed. Since these load via `<img>`, their `<text>` falls back to the browser's own bold sans-serif rather than the page's loaded Google Fonts (an `<img>`-loaded SVG can't see the parent page's fonts); if you have a real vector export of the logo, drop it in over these placeholders for pixel-perfect brand type.
@@ -84,6 +84,5 @@ Then open the printed local URL in your browser.
 
 ## Notes / before going live
 
-- If you have a Neue Regrade license, add it via `@font-face` and update `--font-head` in `css/style.css`.
 - The lead form is client-side only (shows a success state on submit); wire it up to a real backend, CRM, or form service (e.g. Formspree, a serverless function) before launch.
 - Pull exact hex values from DevTools against the live site if you want to double-check any of the estimates noted above.
