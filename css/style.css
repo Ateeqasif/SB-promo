@@ -151,7 +151,7 @@ img, svg { display: block; max-width: 100%; }
    for the dark variant) instead of CSS-rendered text/border, so it can be
    swapped by replacing the file. .logo is just the link wrapper. */
 .logo { display: inline-flex; align-items: center; }
-.logo-img { display: block; width: 152px; height: 38px; }
+.logo-img { display: block; height: 32px; width: auto; }
 .logo:hover .logo-img { opacity: 0.85; }
 .logo-dark, .logo-dark .logo-light, .logo-dark .logo-bold { color: #DEE2E6; }
 
