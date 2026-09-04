@@ -641,11 +641,8 @@ img, svg { display: block; max-width: 100%; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--orange-tint);
-  color: var(--orange-dark);
+  width: 44px;
+  height: 44px;
   margin-bottom: 16px;
 }
 .benefit-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
@@ -662,7 +659,7 @@ img, svg { display: block; max-width: 100%; }
 .site-footer { background: #141312; color: #9c9689; padding: 64px 0 0; }
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 0.8fr 1fr;
+  grid-template-columns: 1.8fr 1fr;
   gap: 32px;
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -738,7 +735,6 @@ img, svg { display: block; max-width: 100%; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-form { position: static; }
   .process-row, .process-row-3 { grid-template-columns: repeat(2, 1fr); gap: 40px 26px; }
-  .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 760px) {
