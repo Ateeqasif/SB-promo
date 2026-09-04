@@ -4,10 +4,10 @@
    official SlickBlinds brand reference (verified 03 Sep 2026,
    sourced from slickblinds.com live CSS + site assets).
    Neue Regrade (headings) is a paid/commercial font not
-   available via Google Fonts — Manrope ExtraBold is used as
-   the closest freely-licensed match (geometric, tight
-   tracking, 800 weight available). Montserrat is the real
-   brand body/nav/button font and is used exactly as specified.
+   available via Google Fonts. The live site's own CSS falls
+   back to Montserrat when Neue Regrade isn't loaded, so that's
+   used here too — same font as body/nav/buttons, at 800 weight
+   for headings.
    ============================================ */
 
 :root {
@@ -24,7 +24,7 @@
   --line: #CED4DA;          /* Border */
   --on-dark: #F9FAFB;
 
-  --font-head: 'Baloo 2', 'Manrope', 'Montserrat', sans-serif;
+  --font-head: 'Montserrat', ui-sans-serif, sans-serif; /* real site's own fallback for Neue Regrade (paid font, no license) */
   --font-body: 'Montserrat', sans-serif;
 
   --radius: 14px;

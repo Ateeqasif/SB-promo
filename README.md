@@ -45,7 +45,7 @@ Colors, logo, and typography match the official SlickBlinds brand reference shee
 
 **Typography**
 
-- Headings: **Baloo 2** (600/700/800), a rounded, friendly display face, loaded from Google Fonts. Falls back to Manrope, then Montserrat, then system sans-serif. Change `--font-head` in `css/style.css` to swap it.
+- Headings: real brand font is **Neue Regrade** (ExtraBold 800), a paid/commercial font not on Google Fonts. Verified against slickblinds.com's own DevTools Computed panel that its CSS falls back to **Montserrat** when Neue Regrade isn't loaded — so that's what's used here, at 800 weight. Add Neue Regrade via `@font-face` and update `--font-head` in `css/style.css` if you get a license.
 - Body / navigation / buttons: **Montserrat** — matches the real brand exactly, loaded from Google Fonts.
 
 **Logo** — a real image file, `assets/images/logo.svg` (header/light) and `assets/images/logo-footer.svg` (muted variant for the dark footer), matching the brand spec: `#F18605` border, `#212529` wordmark ("SLICK" regular + "BLINDS" ExtraBold), 8px radius; the footer variant is `#DEE2E6` wordmark on a transparent fill. Replace either file directly to swap the logo — no markup changes needed. Since these load via `<img>`, their `<text>` falls back to the browser's own bold sans-serif rather than the page's loaded Google Fonts (an `<img>`-loaded SVG can't see the parent page's fonts); if you have a real vector export of the logo, drop it in over these placeholders for pixel-perfect brand type.
