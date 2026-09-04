@@ -52,7 +52,7 @@ Colors, logo, and typography match the official SlickBlinds brand reference shee
 
 **Primary CTA button** — exact spec: fill `#202428`, text `#F9FAFB`, 10px radius, 10×22px padding, shadow `0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1)`.
 
-**Imagery treatment** — real site uses premium interior photography with a black 70%→0% fade behind white hero copy. The hero (`.hero-bg` in `index.html`) is a looping background video at `assets/hero-video.mp4` (H.264/AAC), autoplay/muted/loop/playsinline so it plays automatically across desktop and mobile browsers. Swap in a different video or licensed photo the same way when available.
+**Imagery treatment** — real site uses premium interior photography with a black 70%→0% fade behind white hero copy. The hero (`.hero-bg` in `index.html`) is a looping background video at `assets/videos/hero-video.mp4` (H.264/AAC), autoplay/muted/loop/playsinline so it plays automatically across desktop and mobile browsers. Swap in a different video or licensed photo the same way when available.
 
 ## Structure
 
@@ -61,8 +61,8 @@ index.html               Page markup (Katy & Cinco Ranch, full-length)
 short.html                Condensed 3-section paid-ads landing page
 css/style.css            Stylesheet (design tokens, layout, responsive)
 js/script.js             Mobile nav, scroll reveal, FAQ accordion, 2-step form, cookie notice
-assets/hero-video.mp4    Hero background video (looping)
-assets/journey-video.mp4 Final-CTA background video (looping)
+assets/videos/hero-video.mp4    Hero background video (looping)
+assets/videos/journey-video.mp4 Final-CTA background video (looping)
 ```
 
 ## Running locally
