@@ -626,6 +626,37 @@ img, svg { display: block; max-width: 100%; }
 .final-cta p { color: #b7b2a8; margin-bottom: 30px; }
 .final-cta .btn-primary { background: var(--orange); color: #fff; }
 .final-cta .btn-primary:hover { background: var(--orange-dark); }
+.final-cta-phone { margin: 18px 0 0; }
+.final-cta-phone a { color: #d8d2c8; font-size: 0.92rem; text-decoration: underline; text-underline-offset: 3px; }
+.final-cta-phone a:hover { color: #fff; }
+
+/* Benefit grid — short-format landing page ("why us" strip) */
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.benefit-card { text-align: center; }
+.benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--orange-tint);
+  color: var(--orange-dark);
+  margin-bottom: 16px;
+}
+.benefit-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.benefit-card p { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.55; }
+
+@media (max-width: 900px) {
+  .benefit-grid { grid-template-columns: 1fr 1fr; gap: 36px 24px; }
+}
+@media (max-width: 560px) {
+  .benefit-grid { grid-template-columns: 1fr; }
+}
 
 /* ---------- Footer ---------- */
 .site-footer { background: #141312; color: #9c9689; padding: 64px 0 0; }

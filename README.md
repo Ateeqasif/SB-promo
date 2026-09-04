@@ -16,6 +16,16 @@ Built from the "landing_pages_paid_ads.docx" brief (which specs six geo-targeted
 
 The lead-capture form behind both CTAs (2-step: product type + zip → contact info) is a functional/UX element, not page copy.
 
+## `short.html` — condensed paid-ads landing page
+
+A second, much shorter page for driving paid traffic straight to a quote, modeled on high-converting competitor patterns (3 Day Blinds, Stoneside): no navigation distractions, tight benefit-led copy, and a CTA in every section aligned to what that section just said. Three sections total:
+
+1. **Hero** — headline + one-line trust statement + the same 2-step quote form, CTA: "Get My Free Quote"
+2. **Why Katy Homeowners Choose SlickBlinds** — a 4-icon benefit strip (custom fit, in-home consultation, motorization, warranty), CTA: "See what fits your windows"
+3. **Final CTA** — urgency close over the journey video background, CTA: "Book My Free Consultation" + a phone fallback
+
+Shares `css/style.css`, `js/script.js`, and both video assets with `index.html`; header/footer are the same chrome, with footer category links pointing back into `index.html`'s fuller content (products, motorization, FAQ) since this page doesn't carry that detail itself.
+
 ## Brand reference
 
 Colors, logo, and typography match the official SlickBlinds brand reference sheet (verified 03 Sep 2026):
@@ -47,7 +57,8 @@ Colors, logo, and typography match the official SlickBlinds brand reference shee
 ## Structure
 
 ```
-index.html               Page markup (Katy & Cinco Ranch)
+index.html               Page markup (Katy & Cinco Ranch, full-length)
+short.html                Condensed 3-section paid-ads landing page
 css/style.css            Stylesheet (design tokens, layout, responsive)
 js/script.js             Mobile nav, scroll reveal, FAQ accordion, 2-step form, cookie notice
 assets/hero-video.mp4    Hero background video (looping)
