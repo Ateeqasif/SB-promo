@@ -62,7 +62,7 @@
       journeySlides[journeyIndex].classList.remove('is-active');
       journeyIndex = nextIndex;
       journeySlides[journeyIndex].classList.add('is-active');
-    }, 4000);
+    }, 1250);
   }
 
   // Read more / read less toggles (merged feature columns)
