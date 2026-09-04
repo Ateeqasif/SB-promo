@@ -747,6 +747,7 @@ img, svg { display: block; max-width: 100%; }
   .header-phone span { display: none; }
   .nav-toggle { display: flex; }
   .header-actions .btn-sm { display: none; }
+  .site-header-minimal .header-actions .btn-sm { display: inline-flex; }
 
   .site-header.nav-open .main-nav {
     display: flex;
