@@ -50,13 +50,17 @@
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  // Journey background slider (short.html) — auto-crossfades slides
+  // Journey background slider (short.html) — auto-crossfades slides in random order
   var journeySlides = document.querySelectorAll('.journey-slide');
   if (journeySlides.length > 1) {
     var journeyIndex = 0;
     setInterval(function () {
+      var nextIndex;
+      do {
+        nextIndex = Math.floor(Math.random() * journeySlides.length);
+      } while (nextIndex === journeyIndex);
       journeySlides[journeyIndex].classList.remove('is-active');
-      journeyIndex = (journeyIndex + 1) % journeySlides.length;
+      journeyIndex = nextIndex;
       journeySlides[journeyIndex].classList.add('is-active');
     }, 4000);
   }
