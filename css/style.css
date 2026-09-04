@@ -636,7 +636,8 @@ img, svg { display: block; max-width: 100%; }
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 }
-.benefit-card { text-align: center; }
+.benefit-card { text-align: center; padding: 0 24px; }
+.benefit-card:not(:first-child) { border-left: 1px solid rgba(241, 134, 5, 0.3); }
 .benefit-icon {
   display: inline-flex;
   align-items: center;
@@ -650,9 +651,13 @@ img, svg { display: block; max-width: 100%; }
 
 @media (max-width: 900px) {
   .benefit-grid { grid-template-columns: 1fr 1fr; gap: 36px 24px; }
+  .benefit-card:not(:first-child) { border-left: none; }
+  .benefit-card:nth-child(2n) { border-left: 1px solid rgba(241, 134, 5, 0.3); }
 }
 @media (max-width: 560px) {
   .benefit-grid { grid-template-columns: 1fr; }
+  .benefit-card { padding: 0; }
+  .benefit-card:nth-child(2n) { border-left: none; }
 }
 
 /* ---------- Footer ---------- */
