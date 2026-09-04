@@ -667,6 +667,7 @@ img, svg { display: block; max-width: 100%; }
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
   text-align: left;
+  margin-top: 56px;
 }
 .benefit-grid + .prose-cta .text-cta { grid-column: 3 / 5; }
 @media (max-width: 900px) {
