@@ -147,28 +147,12 @@ img, svg { display: block; max-width: 100%; }
   gap: 20px;
 }
 
-/* Logo — exact brand spec: PRIMARY border #F18605 / wordmark #212529 */
-.logo {
-  display: inline-flex;
-  align-items: center;
-  background: #fff;
-  border: 2px solid var(--orange);
-  border-radius: 8px;
-  padding: 7px 14px;
-  font-family: var(--font-head);
-  font-weight: 800;
-  font-size: 1.05rem;
-  color: #212529;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-.logo .logo-light { font-weight: 400; margin-right: 2px; letter-spacing: 0.06em; }
-.logo .logo-bold { font-weight: 800; letter-spacing: 0.02em; }
-/* Muted monochrome variant — light-grey border and wordmark, for the dark footer */
-.logo-dark {
-  background: transparent;
-  border-color: rgba(222, 226, 230, 0.35);
-}
+/* Logo — now a real image file (assets/images/logo.svg, logo-footer.svg
+   for the dark variant) instead of CSS-rendered text/border, so it can be
+   swapped by replacing the file. .logo is just the link wrapper. */
+.logo { display: inline-flex; align-items: center; }
+.logo-img { display: block; width: 152px; height: 38px; }
+.logo:hover .logo-img { opacity: 0.85; }
 .logo-dark, .logo-dark .logo-light, .logo-dark .logo-bold { color: #DEE2E6; }
 
 .main-nav { display: flex; gap: 22px; align-items: center; }

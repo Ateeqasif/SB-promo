@@ -48,7 +48,9 @@ Colors, logo, and typography match the official SlickBlinds brand reference shee
 - Headings: **Neue Regrade** (ExtraBold 800) — this is a paid/commercial font not available via Google Fonts, so **Manrope** (ExtraBold 800, geometric, tight tracking) is used as the closest freely-licensed fallback. Swap in Neue Regrade via `@font-face` if you have a license.
 - Body / navigation / buttons: **Montserrat** — matches the real brand exactly, loaded from Google Fonts.
 
-**Logo** — recreated in CSS/HTML (not an image asset) per spec: `#F18605` border, `#212529` wordmark ("SLICK" regular + "BLINDS" ExtraBold), 10px radius. A dark variant (`.logo-dark`, wordmark `#DEE2E6` on `#202428`) is used in the footer.
+**Logo** — a real image file, `assets/images/logo.svg` (header/light) and `assets/images/logo-footer.svg` (muted variant for the dark footer), matching the brand spec: `#F18605` border, `#212529` wordmark ("SLICK" regular + "BLINDS" ExtraBold), 8px radius; the footer variant is `#DEE2E6` wordmark on a transparent fill. Replace either file directly to swap the logo — no markup changes needed. Since these load via `<img>`, their `<text>` falls back to the browser's own bold sans-serif rather than the page's loaded Google Fonts (an `<img>`-loaded SVG can't see the parent page's fonts); if you have a real vector export of the logo, drop it in over these placeholders for pixel-perfect brand type.
+
+**Favicon** — `assets/images/favicon.svg`, referenced by both pages' `<link rel="icon">`. Replace the file to change it site-wide.
 
 **Primary CTA button** — exact spec: fill `#202428`, text `#F9FAFB`, 10px radius, 10×22px padding, shadow `0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1)`.
 
@@ -63,6 +65,9 @@ css/style.css            Stylesheet (design tokens, layout, responsive)
 js/script.js             Mobile nav, scroll reveal, FAQ accordion, 2-step form, cookie notice
 assets/videos/hero-video.mp4    Hero background video (looping)
 assets/videos/journey-video.mp4 Final-CTA background video (looping)
+assets/images/logo.svg          Header logo (swap this file to change the logo)
+assets/images/logo-footer.svg   Muted logo variant for the dark footer
+assets/images/favicon.svg       Browser tab icon
 ```
 
 ## Running locally
