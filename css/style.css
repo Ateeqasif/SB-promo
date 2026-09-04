@@ -660,6 +660,19 @@ img, svg { display: block; max-width: 100%; }
   .benefit-card:nth-child(2n) { border-left: none; }
 }
 
+/* Pin the "why us" CTA to the grid's 2nd divider rather than the
+   container's optical center, which don't quite coincide. */
+.benefit-grid + .prose-cta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: left;
+}
+.benefit-grid + .prose-cta .text-cta { grid-column: 3 / 5; }
+@media (max-width: 900px) {
+  .benefit-grid + .prose-cta { display: block; text-align: center; }
+}
+
 /* ---------- Footer ---------- */
 .site-footer { background: #141312; color: #9c9689; padding: 64px 0 0; }
 .footer-inner {
@@ -708,6 +721,19 @@ img, svg { display: block; max-width: 100%; }
 /* ---------- Reveal-on-scroll ---------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Scroll-triggered window/blind motif — rides the same .reveal/.is-visible
+   toggle above, no extra JS. The shade rolls up once its section scrolls
+   into view. */
+.scroll-blind { display: flex; justify-content: center; margin: 0 auto 22px; }
+.blind-shade {
+  transform-origin: top center;
+  transform: scaleY(1);
+  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+.reveal.is-visible .blind-shade,
+.is-visible .scroll-blind .blind-shade { transform: scaleY(0); }
+.scroll-blind-light .blind-shade { fill: var(--orange); }
 
 /* ---------- Cookie notice ---------- */
 .cookie-notice {
