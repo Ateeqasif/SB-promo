@@ -109,7 +109,7 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .offer-ribbon{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:fit-content;margin-top:26px;padding:14px 26px;border-radius:8px;background:var(--gold-grad);box-shadow:0 8px 18px rgba(241,134,5,.4);pointer-events:none}
 .offer-ribbon-text{color:#fff;text-align:center}
 .offer-ribbon-text .l1{font-size:13px;font-weight:800;letter-spacing:.02em;line-height:1.1}
-.offer-ribbon-text .l2{font-size:8.5px;font-weight:700;letter-spacing:.03em;margin-top:2px;max-width:120px;line-height:1.3;text-transform:uppercase}
+.offer-ribbon-text .l2{font-size:8.5px;font-weight:700;letter-spacing:.03em;margin-top:2px;white-space:nowrap;line-height:1.3;text-transform:uppercase}
 
 /* ---------- FORM CARD ---------- */
 .form-card{background:#fff;border:1px solid var(--line-2);border-radius:16px;box-shadow:0 30px 70px rgba(29,24,21,.12);padding:18px 32px;display:flex;flex-direction:column;min-height:320px}
@@ -336,6 +336,7 @@ p,.hero .lead,.range .intro,.range .outro,.slide p,.cta p,.faq-a p,.foot-about{f
 .label,.range-highlight-label,.foot-col h4{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:22px!important;font-weight:500!important;letter-spacing:0!important}
 .btn-consult,.get-started,.cta-gold,.cta-out{font-family:'Montserrat',Arial,sans-serif!important;font-size:16px!important;line-height:24px!important;font-weight:600!important;letter-spacing:0!important;text-transform:none}
 .get-started{text-transform:uppercase!important;font-size:14px!important}
+.cta-gold,.cta-out{text-transform:uppercase!important}
 .cta-gold,.cta-out{font-size:14px!important;padding:9px 22px!important}
 .caption,.slide-img .cap{font-family:'Montserrat',Arial,sans-serif!important;font-size:10px!important;line-height:14px!important;font-weight:400!important}
 .hero h1 .accent,.label,.range-highlight-label,.read-more{color:#F18605!important}
@@ -792,7 +793,7 @@ function Cta(){
         <h2>Your Katy Home. Your Windows. A More Thoughtful Fit.</h2>
         <p>We bring the consultation to you, so you can see materials and explore options in the rooms where they'll actually live.</p>
         <div className="cta-btns">
-          <a className="cta-gold" href="#consult"><IcCal/> Book Your Free In-Home Consultation</a>
+          <a className="cta-gold" href="#consult">Book your free in-house design consultation</a>
           <a className="cta-out" href={"tel:"+PHONE}><IcPhone s={18}/> {PHONE}</a>
         </div>
       </div>
