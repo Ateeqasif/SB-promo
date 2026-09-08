@@ -106,8 +106,9 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero .lead{font-size:13.5px;color:rgba(255,255,255,.82);margin-top:10px;max-width:520px;line-height:1.45}
 .read-more.hero-read-more{display:flex;width:fit-content;margin-top:8px}
 .rating .g-word{font-weight:400}
-.hero-cta{display:inline-flex;width:fit-content;align-items:center;justify-content:center;gap:9px;background:var(--gold-grad);color:#fff;font-weight:600;text-transform:uppercase;letter-spacing:0;font-size:14px;line-height:18px;padding:10px 32px;border-radius:8px;margin-top:auto;box-shadow:0 10px 22px rgba(189,154,90,.32);transition:.2s}
-.hero-cta:hover{filter:brightness(1.04);transform:translateY(-1px)}
+.offer-badge{display:inline-flex;width:fit-content;align-items:center;justify-content:center;gap:8px;background:var(--gold-grad);color:#fff;font-weight:600;letter-spacing:0;font-size:13px;line-height:16px;padding:9px 20px;border-radius:999px;margin-top:auto;box-shadow:0 8px 18px rgba(189,154,90,.32);transition:.2s;text-decoration:none}
+.offer-badge svg{flex:0 0 auto}
+.offer-badge:hover{filter:brightness(1.04);transform:translateY(-1px)}
 
 /* ---------- FORM CARD ---------- */
 .form-card{background:#fff;border:1px solid var(--line-2);border-radius:16px;box-shadow:0 30px 70px rgba(29,24,21,.12);padding:24px 36px;display:flex;flex-direction:column;min-height:400px}
@@ -251,7 +252,7 @@ footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
   .rating{gap:8px;padding:9px 14px}
   .foot-grid{grid-template-columns:1fr 1fr}
   .foot-about{max-width:100%}
-  .hero-cta{width:100%;justify-content:center}
+  .offer-badge{width:100%;justify-content:center}
   .faq-q{font-size:15.5px;padding:18px 20px}
   .faq-a{padding:0 20px}
   .cta-btns{flex-direction:column;align-items:stretch}
@@ -608,7 +609,7 @@ function Hero(){
             <button className={"read-more hero-read-more"+(leadOpen?" open":"")} onClick={()=>setLeadOpen(!leadOpen)}>
               {leadOpen ? "Read Less" : "Read More"} <IcCaret className="caret"/>
             </button>
-            <a className="hero-cta" href="#consult">Book Now <IcArrow/></a>
+            <a className="offer-badge" href="#consult"><IcCal/> Offer Free In-Home Consultations</a>
           </div>
           <ConsultForm/>
         </div>
