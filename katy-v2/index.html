@@ -149,6 +149,7 @@ section{position:relative}
 .range-item .chk{width:38px;height:38px;border-radius:50%;background:#FDE3C0;display:grid;place-items:center;flex:0 0 auto;color:#111}
 .range-item-label{flex:1;font-size:16px;font-weight:500;color:#2f2a25;line-height:1.35}
 .range-item svg{flex:0 0 auto;color:#F18605}
+.range-visual{display:flex;flex-direction:column;gap:18px}
 .range-img{position:relative;border-radius:16px;overflow:hidden;min-height:460px;background-size:cover;background-position:center;box-shadow:0 20px 50px rgba(0,0,0,.10)}
 .range-img .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 26px;color:#fff;font-weight:700;font-size:18px;background:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,0))}
 .range .outro{font-size:16px !important;color:var(--muted);max-width:-webkit-fill-available;margin-top:30px;line-height:1.6}
@@ -641,8 +642,11 @@ function Range(){
               </button>
             ))}
           </div>
-          <div className="range-img" style={{backgroundImage:"url("+RANGE_IMGS[sel]+")"}}>
-            <div className="cap">{RANGE[sel]}</div>
+          <div className="range-visual">
+            <div className="range-img" style={{backgroundImage:"url("+RANGE_IMGS[sel]+")"}}>
+              <div className="cap">{RANGE[sel]}</div>
+            </div>
+            <a className="explore range-more-link" href="#consult">Interested to Knowing More <IcArrow/></a>
           </div>
         </div>
         <p className="outro">Whether you want a clean, contemporary look or something warmer and more layered, we help you find the right combination for your home.</p>
