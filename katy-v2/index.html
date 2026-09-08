@@ -95,32 +95,32 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero{position:relative;overflow:hidden;min-height:calc(100vh - 96px);display:flex;flex-direction:column;justify-content:center}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center right;background-repeat:no-repeat}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,37,41,.82) 0%,rgba(33,37,41,.68) 30%,rgba(33,37,41,.40) 52%,rgba(33,37,41,.14) 78%,rgba(33,37,41,.02) 100%)}
-.hero-inner{position:relative;display:grid;grid-template-columns:0.9fr 1.2fr;gap:48px;align-items:stretch;padding:22px 0 24px}
+.hero-inner{position:relative;display:grid;grid-template-columns:0.9fr 1.2fr;gap:48px;align-items:stretch;padding:18px 0 20px}
 .hero-copy{display:flex;flex-direction:column}
-.rating{display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:10px;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.5);border-radius:14px;padding:10px 16px;font-size:13px;color:#3b3b3b;box-shadow:0 6px 18px rgba(0,0,0,.12);margin-bottom:16px;white-space:nowrap}
+.rating{display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:10px;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.5);border-radius:14px;padding:10px 16px;font-size:13px;color:#3b3b3b;box-shadow:0 6px 18px rgba(0,0,0,.12);margin-bottom:10px;white-space:nowrap}
 .rating b{color:#4285F4;font-weight:600}
 .rating .star{color:#f5b800}
 .hero h1{font-family:var(--sans);font-weight:800;font-size:64px;line-height:1.02;letter-spacing:-.02em;color:#fff}
 .hero h1 .accent{color:var(--accent)}
-.hero .sub{font-size:19px;font-weight:600;color:#fff;margin-top:8px;line-height:1.3;max-width:520px}
-.hero .lead{font-size:14px;color:rgba(255,255,255,.82);margin-top:10px;max-width:520px;line-height:1.45}
-.read-more.hero-read-more{display:flex;width:fit-content;margin-top:8px}
+.hero .sub{font-size:19px;font-weight:600;color:#fff;margin-top:6px;line-height:1.3;max-width:520px}
+.hero .lead{font-size:14px;color:rgba(255,255,255,.82);margin-top:8px;max-width:520px;line-height:1.45}
+.read-more.hero-read-more{display:flex;width:fit-content;margin-top:6px}
 .rating .g-word{font-weight:400}
 .offer-badge{display:inline-flex;width:fit-content;align-items:center;justify-content:center;gap:8px;background:var(--gold-grad);color:#fff;font-weight:600;letter-spacing:0;font-size:13px;line-height:16px;padding:9px 20px;border-radius:10px;margin-top:auto;position:relative;top:-7px;box-shadow:0 8px 18px rgba(189,154,90,.32),0 0 22px rgba(241,134,5,.55);transition:.2s;text-decoration:none}
 .offer-badge svg{flex:0 0 auto}
 .offer-badge:hover{filter:brightness(1.04);transform:translateY(-1px)}
 
 /* ---------- FORM CARD ---------- */
-.form-card{background:#fff;border:1px solid var(--line-2);border-radius:16px;box-shadow:0 30px 70px rgba(29,24,21,.12);padding:24px 36px;display:flex;flex-direction:column;min-height:400px}
+.form-card{background:#fff;border:1px solid var(--line-2);border-radius:16px;box-shadow:0 30px 70px rgba(29,24,21,.12);padding:18px 32px;display:flex;flex-direction:column;min-height:320px}
 .fc-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
 .fc-title{font-family:var(--serif);font-size:32px;font-weight:600;color:var(--serif-ink);line-height:1.15;max-width:330px}
 .step-chip{font-size:13px;color:var(--muted-2);white-space:nowrap;padding-top:6px}
-.fc-q{font-size:14.5px;font-weight:700;color:#2b2b2b;margin:26px 0 14px}
+.fc-q{font-size:14.5px;font-weight:700;color:#2b2b2b;margin:18px 0 10px}
 .pills{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .pill{border:1px solid var(--line);background:#fff;border-radius:8px;padding:12px 6px;font-size:13.5px;color:#3a3a3a;transition:.15s;text-align:center}
 .pill:hover{border-color:var(--gold)}
 .pill.on{border-color:#F18605;background:#FEF2E4;color:#F18605;font-weight:600;box-shadow:0 0 0 1px #F18605 inset}
-.field{position:relative;margin-top:14px}
+.field{position:relative;margin-top:10px}
 .field .fic{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#b7a98e}
 .field input{width:100%;border:1px solid var(--line);border-radius:8px;padding:15px 20px 15px 46px;font-size:15px;color:#2b2b2b;background:#fff;transition:.15s}
 .field input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(189,154,90,.14)}
@@ -612,7 +612,7 @@ function Hero(){
             <button className={"read-more hero-read-more"+(leadOpen?" open":"")} onClick={()=>setLeadOpen(!leadOpen)}>
               {leadOpen ? "Read Less" : "Read More"} <IcCaret className="caret"/>
             </button>
-            <a className="offer-badge" href="#consult"><IcCal/> Offering Free In-Home Consultations</a>
+            <a className="offer-badge" href="#consult">Offering Free In-Home Consultations</a>
           </div>
           <ConsultForm/>
         </div>
