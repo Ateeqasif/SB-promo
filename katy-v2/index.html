@@ -140,11 +140,16 @@ section{position:relative}
 .pad{padding:40px 0}
 .range h2{font-family:var(--serif);font-size:46px;font-weight:600;color:var(--serif-ink);margin:14px 0 22px;line-height:1.1}
 .range .intro{font-size:17px;color:var(--muted);max-width:640px;line-height:1.6}
-.range-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px}
-.range-card{display:flex;align-items:center;gap:16px;min-height:50px;background:#FFFBEF;border:1px solid #eee3d0;border-radius:14px;padding:7px 14px;transition:.15s}
-.range-card:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.06)}
-.range-card .chk{width:38px;height:38px;border-radius:50%;background:#FDE3C0;display:grid;place-items:center;flex:0 0 auto;color:#111}
-.range-card span{font-size:16px;font-weight:500;color:#2f2a25;line-height:1.35}
+.range-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:34px;align-items:start}
+.range-list{display:flex;flex-direction:column;gap:10px}
+.range-item{display:flex;align-items:center;gap:16px;min-height:50px;background:#FFFBEF;border:1px solid #eee3d0;border-radius:14px;padding:7px 14px;transition:.15s;width:100%;text-align:left;cursor:pointer}
+.range-item:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.06)}
+.range-item.on{background:#FFF3DC;border-color:#F18605}
+.range-item .chk{width:38px;height:38px;border-radius:50%;background:#FDE3C0;display:grid;place-items:center;flex:0 0 auto;color:#111}
+.range-item-label{flex:1;font-size:16px;font-weight:500;color:#2f2a25;line-height:1.35}
+.range-item svg{flex:0 0 auto;color:#F18605}
+.range-img{position:relative;border-radius:16px;overflow:hidden;min-height:460px;background-size:cover;background-position:center;box-shadow:0 20px 50px rgba(0,0,0,.10)}
+.range-img .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 26px;color:#fff;font-weight:700;font-size:18px;background:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,0))}
 .range .outro{font-size:16px !important;color:var(--muted);max-width:-webkit-fill-available;margin-top:30px;line-height:1.6}
 
 /* ---------- SLIDER ---------- */
@@ -217,7 +222,8 @@ footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
   .menu{gap:18px}
 }
 @media(max-width:1080px){
-  .range-grid{grid-template-columns:1fr 1fr}
+  .range-split{grid-template-columns:1fr;gap:28px}
+  .range-img{min-height:340px}
   .foot-grid{grid-template-columns:1.4fr 1fr 1fr;row-gap:34px}
 }
 @media(max-width:980px){
@@ -250,10 +256,10 @@ footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
   .faq-a{padding:0 20px}
   .cta-btns{flex-direction:column;align-items:stretch}
   .cta-gold,.cta-out{justify-content:center;width:100%}
-  .range-grid{grid-template-columns:1fr;gap:14px}
-  .range-card{min-height:96px;flex-direction:row;justify-content:flex-start;text-align:left;padding:18px 24px;gap:16px}
-  .range-card .chk{width:48px;height:48px}
-  .range-card span{font-size:16px}
+  .range-item{min-height:96px;padding:18px 24px;gap:16px}
+  .range-item .chk{width:48px;height:48px}
+  .range-item-label{font-size:16px}
+  .range-img{min-height:280px}
   .range .intro{font-size:16px}
   .range .outro{font-size:15.5px}
   .btn-consult{font-size:11.5px;padding:11px 12px;letter-spacing:.02em;margin-left:auto}
@@ -271,9 +277,8 @@ footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
   .hero .sub{font-size:18px}
   .slide-body{padding:30px 22px}
   .slide h3{font-size:27px}
-  .range-card{        min-height: 50px;
-        padding: 7px 8px;}
-  .range-card .chk{width:44px;height:44px}
+  .range-item{min-height:50px;padding:7px 8px}
+  .range-item .chk{width:44px;height:44px}
 }
 .mobile-menu{display:none}
 .mobile-menu.show{display:block;background:#fff;border-bottom:1px solid var(--line-2);padding:12px 20px 20px}
@@ -284,7 +289,7 @@ footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
 .logo-image img{display:block;width:170px;height:28px;object-fit:contain}
 .foot-logo-image{border:0!important;padding:0!important;border-radius:0!important;background:transparent!important}
 .foot-logo-image img{display:block;width:190px;height:auto;object-fit:contain;filter:brightness(0) invert(1)}
-.range-card{background:#FFFBEF!important}
+.range-item{background:#FFFBEF!important}
 .mobile-menu .mobile-consult{display:none}
 @media(max-width:980px){
   .site .nav{display:flex;align-items:center;gap:12px;height:64px}
@@ -320,7 +325,7 @@ h4{font-size:23px!important;line-height:26px!important;font-weight:800!important
 .fc-title{color:#212529!important}
 .hero .sub{color:#fff!important}
 p,.hero .lead,.range .intro,.range .outro,.slide p,.cta p,.faq-a p,.foot-about{font-family:'Montserrat',Arial,sans-serif!important;font-size:17px!important;line-height:30px!important;font-weight:500!important}
-.body-medium,.range-card span,.faq-q,.explore{font-family:'Montserrat',Arial,sans-serif!important;font-size:17px!important;line-height:28px!important;font-weight:500!important}
+.body-medium,.range-item-label,.faq-q,.explore{font-family:'Montserrat',Arial,sans-serif!important;font-size:17px!important;line-height:28px!important;font-weight:500!important}
 .body-small,.rating,.field input,.pill,.step-chip,.back-link,.read-more,.foot-col a,.mobile-menu a,.menu-link{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:24px!important;font-weight:500!important}
 .label,.range-highlight-label,.foot-col h4{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:22px!important;font-weight:500!important;letter-spacing:0!important}
 .btn-consult,.get-started,.cta-gold,.cta-out{font-family:'Montserrat',Arial,sans-serif!important;font-size:16px!important;line-height:24px!important;font-weight:600!important;letter-spacing:0!important;text-transform:none}
@@ -333,8 +338,9 @@ p,.hero .lead,.range .intro,.range .outro,.slide p,.cta p,.faq-a p,.foot-about{f
 .cta-gold{background:linear-gradient(135deg,#F18605 0%,#E06D07 100%)!important}
 .get-started{background:#6b6f76!important;border-radius:8px!important}
 .pill.on{border-color:#F18605!important;background:#FEF2E4!important;color:#F18605!important;box-shadow:0 0 0 1px #F18605 inset!important}
-.range-card{background:#fbfaf8!important;border-color:#EAEAEA!important}
-.range-card .chk{background:#FDE3C0!important;color:#111!important}
+.range-item{background:#fbfaf8!important;border-color:#EAEAEA!important}
+.range-item.on{background:#FFF3DC!important;border-color:#F18605!important}
+.range-item .chk{background:#FDE3C0!important;color:#111!important}
 .cta{background:#fff!important}
 .dark p{color:#D4D4D4!important}
 .cta p{color:#595959!important}
@@ -385,6 +391,7 @@ const NAV = [
 ];
 const PILLS = ["Blinds","Shades","Shutters","Drapes"];
 const RANGE = ["Roller Shades","Dual View Zebra Shades","Thermacell Honeycomb Shades","Trilight Shades","Roman Shades","Sheers & Drapes","Estate Plantation Shutters","Patio Retreat Outdoor Shades","Motorized Shades"];
+const RANGE_IMGS = [HERO_IMG,SLIDE_IMGS[0],SLIDE_IMGS[1],SLIDE_IMGS[2],HERO_IMG,SLIDE_IMGS[0],SLIDE_IMGS[1],SLIDE_IMGS[2],HERO_IMG];
 const SLIDES = [
   {
     n: "01 / 03",
@@ -612,16 +619,30 @@ function Hero(){
 
 /* ---------- range ---------- */
 function Range(){
+  const [sel,setSel]=useState(0);
   return (
     <section id="range" className="pad range">
       <div className="wrap">
         <div className="label">Our Range</div>
         <h2>Custom Blinds &amp; Shades for Katy Homes</h2>
         <p className="intro">Choose from a considered range of window treatments, including:</p>
-        <div className="range-grid">
-          {RANGE.map(r=>(
-            <div className="range-card" key={r}><span className="chk"><IcCheck/></span><span>{r}</span></div>
-          ))}
+        <div className="range-split">
+          <div className="range-list">
+            {RANGE.map((r,i)=>(
+              <button
+                key={r}
+                className={"range-item"+(sel===i?" on":"")}
+                onClick={()=>setSel(i)}
+              >
+                <span className="chk"><IcCheck/></span>
+                <span className="range-item-label">{r}</span>
+                {sel===i && <IcArrow/>}
+              </button>
+            ))}
+          </div>
+          <div className="range-img" style={{backgroundImage:"url("+RANGE_IMGS[sel]+")"}}>
+            <div className="cap">{RANGE[sel]}</div>
+          </div>
         </div>
         <p className="outro">Whether you want a clean, contemporary look or something warmer and more layered, we help you find the right combination for your home.</p>
       </div>
