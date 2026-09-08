@@ -197,19 +197,16 @@ section{position:relative}
 
 /* ---------- FOOTER ---------- */
 footer.site{background:#0a0a0a;color:#cfc6bb;padding:44px 0 0}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:36px}
+.foot-grid{display:flex;flex-direction:column;align-items:flex-start}
 .foot-logo{display:inline-flex;border:2px solid var(--gold);border-radius:8px;padding:7px 14px;font-weight:800;color:#fff;letter-spacing:.06em;font-size:15px}
 .foot-logo .thin{font-weight:500;letter-spacing:.16em}
-.foot-about{font-size:14.5px;line-height:1.7;color:#b3a99e;margin-top:16px;max-width:640px}
+.foot-about{font-size:17px;line-height:1.7;color:#b3a99e;margin-top:16px;max-width:640px}
 .socials{display:flex;gap:12px;margin-top:22px}
 .socials a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;color:#cfc6bb;transition:.15s}
 .socials a:hover{border-color:var(--gold);color:#fff}
-.foot-phone{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-weight:600;margin-top:24px}
-.foot-col h4{color:#fff;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:18px}
-.foot-col a{display:block;font-size:14.5px;color:#b3a99e;padding:6px 0;transition:.15s}
-.foot-col a:hover{color:#fff}
-.foot-contact-line{font-size:14px;color:#b3a99e;margin-top:8px}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.10);margin-top:32px;padding:16px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13.5px;color:#8f867c}
+.foot-phone{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-weight:600;margin-top:24px;font-size:17px}
+.foot-contact-line{font-size:17px;color:#b3a99e;margin-top:8px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.10);margin-top:32px;padding:16px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:17px;color:#8f867c}
 .foot-bottom .links{display:flex;gap:26px}
 .foot-bottom .links a:hover{color:#fff}
 
@@ -258,7 +255,6 @@ footer.site{background:#0a0a0a;color:#cfc6bb;padding:44px 0 0}
   .slide-body{padding:38px 30px;order:1}
   .slide-img{min-height:260px;order:2}
   .slide h3{font-size:32px}
-  .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
   .range h2,.fit h2,.cta h2,.faq h2{font-size:clamp(30px,6vw,40px)}
   .wrap{padding:0 20px}
   .pad{padding:30px 0}
@@ -268,7 +264,6 @@ footer.site{background:#0a0a0a;color:#cfc6bb;padding:44px 0 0}
 }
 @media(max-width:640px){
   .rating{gap:8px;padding:9px 14px}
-  .foot-grid{grid-template-columns:1fr 1fr}
   .foot-about{max-width:100%}
   .offer-ribbon{margin-top:26px}
   .faq-q{font-size:15.5px;padding:18px 20px}
@@ -287,7 +282,6 @@ footer.site{background:#0a0a0a;color:#cfc6bb;padding:44px 0 0}
 }
 @media(max-width:460px){
   .pills{grid-template-columns:1fr 1fr}
-  .foot-grid{grid-template-columns:1fr}
   .foot-bottom{flex-direction:column;text-align:center}
   .foot-bottom .links{flex-wrap:wrap;justify-content:center;gap:16px}
   .nav{height:64px}
@@ -335,8 +329,8 @@ h4{font-size:23px!important;line-height:26px!important;font-weight:800!important
 p,.hero .lead,.range .intro,.range .outro,.slide p,.cta p,.faq-a p,.foot-about{font-family:'Montserrat',Arial,sans-serif!important;font-size:17px!important;line-height:30px!important;font-weight:500!important}
 .hero .lead{font-size:14px!important;line-height:22px!important}
 .body-medium,.range-item-label,.faq-q,.explore{font-family:'Montserrat',Arial,sans-serif!important;font-size:17px!important;line-height:28px!important;font-weight:500!important}
-.body-small,.rating,.field input,.pill,.step-chip,.back-link,.read-more,.foot-col a{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:24px!important;font-weight:500!important}
-.label,.range-highlight-label,.foot-col h4{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:22px!important;font-weight:500!important;letter-spacing:0!important}
+.body-small,.rating,.field input,.pill,.step-chip,.back-link,.read-more{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:24px!important;font-weight:500!important}
+.label,.range-highlight-label{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:22px!important;font-weight:500!important;letter-spacing:0!important}
 .btn-consult,.get-started,.cta-gold,.cta-out{font-family:'Montserrat',Arial,sans-serif!important;font-size:16px!important;line-height:24px!important;font-weight:600!important;letter-spacing:0!important;text-transform:none}
 .get-started{text-transform:uppercase!important;font-size:14px!important}
 .cta-gold,.cta-out{text-transform:uppercase!important}
@@ -359,7 +353,6 @@ p,.hero .lead,.range .intro,.range .outro,.slide p,.cta p,.faq-a p,.foot-about{f
 
 /* Final requested color fixes */
 .cta h2{color:#212529!important}
-.foot-col h4{color:#fff!important}
 </style>
 </head>
 <body>
@@ -647,10 +640,6 @@ const LEGAL_PRIVACY = [
   {t:"h1",x:"15. Contact Us"},
   {t:"p",x:"Slick Blinds, LLC\n16718 House & Hahl Road, Suite E2\nCypress, Texas 77433\nEmail: admin@slickblinds.com\nPhone: (800) 348-6530"}
 ];
-
-const FOOT = {
-  SUPPORT:["Free Consultation"]
-};
 
 /* ---------- header ---------- */
 function Header(){
@@ -1073,20 +1062,12 @@ function Footer(){
     <footer className="site">
       <div className="wrap">
         <div className="foot-grid">
-          <div>
-            <a href="/" className="foot-logo logo-image foot-logo-image" aria-label="Slick Blinds"><img src="https://slickblinds.com/_next/image/?url=https%3A%2F%2Fslickblindsprod.blob.core.windows.net%2Fassets%2Fassets%2Fslick_Blinds_Logo_2499f82cff.svg&w=256&q=75" alt="Slick Blinds" /></a>
-            <p className="foot-about">Premium custom blinds and shades for every home. Expert consultation, professional installation, and Limited Lifetime Warranty included.</p>
-            <div className="socials"><a href="#" aria-label="facebook"><IcFb/></a><a href="#" aria-label="instagram"><IcIg/></a></div>
-            <a className="foot-phone" href={"tel:"+PHONE}><IcPhone s={16}/> {PHONE}</a>
-            <p className="foot-contact-line">support@slickblinds.com</p>
-            <p className="foot-contact-line">16718 House &amp; Hahl Rd, Suite E2, Cypress TX 77433</p>
-          </div>
-          {Object.entries(FOOT).map(([h,items])=>(
-            <div className="foot-col" key={h}>
-              <h4>{h}</h4>
-              {items.map((item,i)=>{ const [label,href]=Array.isArray(item)?item:[item,"#"]; return <a href={href} key={i}>{label}</a>; })}
-            </div>
-          ))}
+          <a href="/" className="foot-logo logo-image foot-logo-image" aria-label="Slick Blinds"><img src="https://slickblinds.com/_next/image/?url=https%3A%2F%2Fslickblindsprod.blob.core.windows.net%2Fassets%2Fassets%2Fslick_Blinds_Logo_2499f82cff.svg&w=256&q=75" alt="Slick Blinds" /></a>
+          <p className="foot-about">Premium custom blinds and shades for every home. Expert consultation, professional installation, and Limited Lifetime Warranty included.</p>
+          <div className="socials"><a href="#" aria-label="facebook"><IcFb/></a><a href="#" aria-label="instagram"><IcIg/></a></div>
+          <a className="foot-phone" href={"tel:"+PHONE}><IcPhone s={16}/> {PHONE}</a>
+          <p className="foot-contact-line">support@slickblinds.com</p>
+          <p className="foot-contact-line">16718 House &amp; Hahl Rd, Suite E2, Cypress TX 77433</p>
         </div>
         <div className="foot-bottom">
           <span>© 2026 Slick Blinds. All rights reserved.</span>
