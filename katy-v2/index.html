@@ -97,7 +97,7 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,37,41,.82) 0%,rgba(33,37,41,.68) 30%,rgba(33,37,41,.40) 52%,rgba(33,37,41,.14) 78%,rgba(33,37,41,.02) 100%)}
 .hero-inner{position:relative;display:grid;grid-template-columns:0.9fr 1.2fr;gap:48px;align-items:stretch;padding:22px 0 24px}
 .hero-copy{display:flex;flex-direction:column}
-.rating{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.32);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.5);border-radius:40px;padding:8px 16px;font-size:13px;color:#3b3b3b;box-shadow:0 6px 18px rgba(0,0,0,.12);margin-bottom:16px}
+.rating{display:inline-flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,.32);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:10px 16px;font-size:13px;color:#3b3b3b;box-shadow:0 6px 18px rgba(0,0,0,.12);margin-bottom:16px;max-width:380px;white-space:normal;line-height:1.5}
 .rating b{color:#4285F4;font-weight:600}
 .rating .star{color:#f5b800}
 .hero h1{font-family:var(--sans);font-weight:800;font-size:64px;line-height:1.02;letter-spacing:-.02em;color:#fff}
@@ -143,7 +143,7 @@ section{position:relative}
 .range-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px}
 .range-card{display:flex;align-items:center;gap:16px;min-height:50px;background:#FFFBEF;border:1px solid #eee3d0;border-radius:14px;padding:7px 14px;transition:.15s}
 .range-card:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.06)}
-.range-card .chk{width:38px;height:38px;border-radius:50%;background:#FDE3C0;display:grid;place-items:center;flex:0 0 auto;color:#B4530A}
+.range-card .chk{width:38px;height:38px;border-radius:50%;background:#FDE3C0;display:grid;place-items:center;flex:0 0 auto;color:#111}
 .range-card span{font-size:16px;font-weight:500;color:#2f2a25;line-height:1.35}
 .range .outro{font-size:16px !important;color:var(--muted);max-width:-webkit-fill-available;margin-top:30px;line-height:1.6}
 
@@ -334,7 +334,7 @@ p,.hero .lead,.range .intro,.range .outro,.slide p,.cta p,.faq-a p,.foot-about{f
 .get-started{background:#6b6f76!important;border-radius:8px!important}
 .pill.on{border-color:#F18605!important;background:#FEF2E4!important;color:#F18605!important;box-shadow:0 0 0 1px #F18605 inset!important}
 .range-card{background:#fbfaf8!important;border-color:#EAEAEA!important}
-.range-card .chk{background:#FDE3C0!important;color:#B4530A!important}
+.range-card .chk{background:#FDE3C0!important;color:#111!important}
 .cta{background:#3B3B3B!important}
 .cta p,.dark p{color:#D4D4D4!important}
 
@@ -839,7 +839,7 @@ function Footer(){
 }
 
 function App(){
-  return (<><Header/><Hero/><Range/><Slider/><Cta/><Faq/><Footer/></>);
+  return (<><Header/><Hero/><Range/><Slider/><Faq/><Cta/><Footer/></>);
 }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
 </script>
