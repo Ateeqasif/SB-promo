@@ -134,7 +134,7 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .success .tick{width:66px;height:66px;border-radius:50%;background:#f3ecdd;display:grid;place-items:center;margin:6px auto 20px}
 .success h3{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--serif-ink)}
 .success p{color:var(--muted);margin-top:12px;font-size:15px;line-height:1.65}
-.err{color:#c0392b;font-size:12.5px;margin-top:6px}
+.err{color:#c0392b;font-size:12.5px;margin-top:6px;min-height:18px;line-height:18px}
 
 /* ---------- RANGE ---------- */
 section{position:relative}
@@ -567,12 +567,12 @@ function ConsultForm(){
         <div className="pills">
           {PILLS.map(p=><button key={p} className={"pill"+(sel.includes(p)?" on":"")} onClick={()=>toggle(p)}>{p}</button>)}
         </div>
-        {err.interest && <div className="err">{err.interest}</div>}
+        <div className="err">{err.interest}</div>
         <div className="fc-q">Your area helps us serve you better</div>
         <div className="field"><span className="fic"><IcHome/></span><input placeholder="Address Line" value={f.address} onChange={set("address")}/></div>
-        {err.address && <div className="err">{err.address}</div>}
+        <div className="err">{err.address}</div>
         <div className="field"><span className="fic"><IcPin/></span><input placeholder="Zipcode" value={f.zip} onChange={set("zip")}/></div>
-        {err.zip && <div className="err">{err.zip}</div>}
+        <div className="err">{err.zip}</div>
         <div className="fc-spacer"/>
         <button className="get-started" onClick={goStep2}>Get Started <IcArrow/></button>
       </>}
@@ -580,11 +580,11 @@ function ConsultForm(){
       {step===2 && <>
         <div className="fc-q" style={{marginTop:24}}>A few details and we'll be in touch</div>
         <div className="field"><span className="fic"><IcUser/></span><input placeholder="Full Name" value={f.name} onChange={set("name")}/></div>
-        {err.name && <div className="err">{err.name}</div>}
+        <div className="err">{err.name}</div>
         <div className="field"><span className="fic"><IcMail/></span><input placeholder="Email Address" value={f.email} onChange={set("email")}/></div>
-        {err.email && <div className="err">{err.email}</div>}
+        <div className="err">{err.email}</div>
         <div className="field"><span className="fic"><IcPhone s={18}/></span><input placeholder="Phone Number" value={f.phone} onChange={set("phone")}/></div>
-        {err.phone && <div className="err">{err.phone}</div>}
+        <div className="err">{err.phone}</div>
         <div className="fc-spacer"/>
         <button className="get-started" onClick={submit}>Submit Request <IcArrow/></button>
         <button className="back-link" onClick={()=>setStep(1)}><IcArrow left/> Back</button>
