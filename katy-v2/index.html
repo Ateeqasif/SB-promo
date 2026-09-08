@@ -528,7 +528,6 @@ function ConsultForm(){
   const goStep2=()=>{
     const e={};
     if(!sel.length) e.interest="Please choose at least one option";
-    if(!f.address.trim()) e.address="Please enter your address";
     if(!f.zip.trim()) e.zip="Please enter your zipcode";
     else if(!/^\d{5}(-\d{4})?$/.test(f.zip.trim())) e.zip="Please enter a valid zipcode";
     setErr(e);
@@ -542,6 +541,7 @@ function ConsultForm(){
     if(!f.name.trim()) e.name="Please enter your name";
     if(!/^\S+@\S+\.\S+$/.test(f.email)) e.email="Please enter a valid email";
     if(f.phone.replace(/\D/g,"").length<7) e.phone="Please enter a valid phone";
+    if(!f.address.trim()) e.address="Please enter your address";
     setErr(e);
     if(Object.keys(e).length) return;
     const payload={...f, interests:sel};
@@ -576,9 +576,7 @@ function ConsultForm(){
         </div>
         <div className="err">{err.interest}</div>
         <div className="fc-q">Your area helps us serve you better</div>
-        <div className="field"><span className="fic"><IcHome/></span><input id="hero-address-input" placeholder="Address Line" value={f.address} onChange={set("address")}/></div>
-        <div className="err">{err.address}</div>
-        <div className="field"><span className="fic"><IcPin/></span><input placeholder="Zipcode" value={f.zip} onChange={set("zip")}/></div>
+        <div className="field"><span className="fic"><IcPin/></span><input id="hero-first-input" placeholder="Zipcode" value={f.zip} onChange={set("zip")}/></div>
         <div className="err">{err.zip}</div>
         <div className="fc-spacer"/>
         <button className="get-started" onClick={goStep2}>Get Started <IcArrow/></button>
@@ -592,6 +590,8 @@ function ConsultForm(){
         <div className="err">{err.email}</div>
         <div className="field"><span className="fic"><IcPhone s={18}/></span><input placeholder="Phone Number" value={f.phone} onChange={set("phone")}/></div>
         <div className="err">{err.phone}</div>
+        <div className="field"><span className="fic"><IcHome/></span><input placeholder="Address Line" value={f.address} onChange={set("address")}/></div>
+        <div className="err">{err.address}</div>
         <div className="fc-spacer"/>
         <button className="get-started" onClick={submit}>Submit Request <IcArrow/></button>
         <button className="back-link" onClick={()=>setStep(1)}><IcArrow left/> Back</button>
@@ -605,7 +605,7 @@ function OfferRibbon(){
   const goToAddress=()=>{
     const card=document.getElementById("consult");
     if(card) card.scrollIntoView({behavior:"smooth",block:"center"});
-    const input=document.getElementById("hero-address-input");
+    const input=document.getElementById("hero-first-input");
     if(input) setTimeout(()=>input.focus(),450);
   };
   return (
