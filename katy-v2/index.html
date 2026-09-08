@@ -76,20 +76,9 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .logo{display:inline-flex;align-items:center;border:2px solid #111;border-radius:8px;padding:6px 13px;font-weight:800;letter-spacing:.06em;font-size:16px;color:#111;white-space:nowrap;flex:0 0 auto;line-height:1}
 .logo .thin{font-weight:500;letter-spacing:.16em}
 .logo .bold{font-weight:800;letter-spacing:.10em}
-.menu{display:flex;align-items:center;gap:18px;margin-left:auto}
-.menu-item{position:relative}
-.menu-link{display:inline-flex;align-items:center;gap:5px;font-size:14.5px;font-weight:500;color:#2b2b2b;padding:8px 0}
-.menu-link:hover{color:var(--accent)}
 .caret{transition:transform .2s}
-.menu-item:hover .caret{transform:rotate(180deg)}
-.dropdown{position:absolute;top:100%;left:-14px;min-width:190px;background:#fff;border:1px solid var(--line-2);border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,.10);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s}
-.menu-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
-.dropdown a{display:block;padding:9px 12px;font-size:14px;border-radius:7px;color:#3a3a3a}
-.dropdown a:hover{background:var(--range-card);color:var(--accent)}
 .btn-consult{background:#111;color:#fff;font-size:13px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:13px 26px;border-radius:10px;transition:.2s;white-space:nowrap;flex:0 0 auto;margin-left:auto}
 .btn-consult:hover{background:#000;transform:translateY(-1px)}
-.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;flex:0 0 auto}
-.hamburger span{width:24px;height:2px;background:#222;border-radius:2px}
 
 /* ---------- HERO ---------- */
 .hero{position:relative;overflow:hidden;min-height:calc(100vh - 96px);display:flex;flex-direction:column;justify-content:center}
@@ -208,7 +197,7 @@ section{position:relative}
 
 /* ---------- FOOTER ---------- */
 footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:36px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:36px}
 .foot-logo{display:inline-flex;border:2px solid var(--gold);border-radius:8px;padding:7px 14px;font-weight:800;color:#fff;letter-spacing:.06em;font-size:15px}
 .foot-logo .thin{font-weight:500;letter-spacing:.16em}
 .foot-about{font-size:14.5px;line-height:1.7;color:#b3a99e;margin-top:20px;max-width:290px}
@@ -226,17 +215,13 @@ footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:1180px){
   .hero h1{font-size:clamp(42px,5.4vw,60px)}
-  .menu{gap:18px}
 }
 @media(max-width:1080px){
   .range-split{grid-template-columns:1fr;gap:28px}
   .range-img{min-height:340px}
-  .foot-grid{grid-template-columns:1.4fr 1fr 1fr;row-gap:34px}
 }
 @media(max-width:980px){
-  .menu{display:none}
   .btn-consult{display:inline-flex !important;align-items:center;justify-content:center}
-  .hamburger{display:flex}
   .hero-inner{grid-template-columns:1fr;gap:48px;padding:40px 0 56px}
   .hero h1{font-size:clamp(36px,8vw,50px)}
   .offer-ribbon{margin-top:26px}
@@ -288,26 +273,15 @@ footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
   .range-item{min-height:50px;padding:7px 8px}
   .range-item .chk{width:44px;height:44px}
 }
-.mobile-menu{display:none}
-.mobile-menu.show{display:block;background:#fff;border-bottom:1px solid var(--line-2);padding:12px 20px 20px}
-.mobile-menu a{display:block;padding:12px 4px;font-size:15px;border-bottom:1px solid var(--line-2);color:#333}
-
 /* Final header/logo/mobile corrections */
 .logo-image{border:0!important;padding:0!important;border-radius:0!important;background:transparent!important;display:inline-flex!important;align-items:center!important;flex:0 0 auto}
 .logo-image img{display:block;width:170px;height:28px;object-fit:contain}
 .foot-logo-image{border:0!important;padding:0!important;border-radius:0!important;background:transparent!important}
 .foot-logo-image img{display:block;width:190px;height:auto;object-fit:contain;filter:brightness(0) invert(1)}
 .range-item{background:#FFFBEF!important}
-.mobile-menu .mobile-consult{display:none}
 @media(max-width:980px){
   .site .nav{display:flex;align-items:center;gap:12px;height:64px}
   .site .nav .logo-image{margin-right:auto}
-  .site .nav .btn-consult{display:none!important}
-  .site .nav .hamburger{display:flex!important}
-  .mobile-menu{display:none!important}
-  .mobile-menu.show{display:block!important;background:#fff;border-bottom:1px solid var(--line-2);padding:8px 20px 16px;box-shadow:0 10px 20px rgba(0,0,0,.05)}
-  .mobile-menu a{display:block;padding:13px 4px;font-size:16px!important;line-height:22px;border-bottom:1px solid var(--line-2);color:#333;text-decoration:none}
-  .mobile-menu .mobile-consult{display:flex!important;margin-top:14px;padding:15px 16px!important;background:#111;color:#fff!important;border:0;border-radius:10px;align-items:center;justify-content:center;font-weight:700!important;text-transform:uppercase!important;letter-spacing:.03em!important;font-size:14px!important}
   .slide-img{order:2!important}
 }
 @media(max-width:520px){
@@ -335,7 +309,7 @@ h4{font-size:23px!important;line-height:26px!important;font-weight:800!important
 p,.hero .lead,.range .intro,.range .outro,.slide p,.cta p,.faq-a p,.foot-about{font-family:'Montserrat',Arial,sans-serif!important;font-size:17px!important;line-height:30px!important;font-weight:500!important}
 .hero .lead{font-size:14px!important;line-height:22px!important}
 .body-medium,.range-item-label,.faq-q,.explore{font-family:'Montserrat',Arial,sans-serif!important;font-size:17px!important;line-height:28px!important;font-weight:500!important}
-.body-small,.rating,.field input,.pill,.step-chip,.back-link,.read-more,.foot-col a,.mobile-menu a,.menu-link{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:24px!important;font-weight:500!important}
+.body-small,.rating,.field input,.pill,.step-chip,.back-link,.read-more,.foot-col a{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:24px!important;font-weight:500!important}
 .label,.range-highlight-label,.foot-col h4{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:22px!important;font-weight:500!important;letter-spacing:0!important}
 .btn-consult,.get-started,.cta-gold,.cta-out{font-family:'Montserrat',Arial,sans-serif!important;font-size:16px!important;line-height:24px!important;font-weight:600!important;letter-spacing:0!important;text-transform:none}
 .get-started{text-transform:uppercase!important;font-size:14px!important}
@@ -390,16 +364,6 @@ const IcFb = ()=>(<svg width="17" height="17" viewBox="0 0 24 24" fill="currentC
 const IcIg = ()=>(<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>);
 
 /* ---------- data ---------- */
-const NAV = [
-  {t:"Shop by Room", href:"#range", sub:["Living Room","Bedroom","Kitchen","Bathroom","Office"]},
-  {t:"Blinds", href:"#range", sub:["Faux Wood Blinds","Wood Blinds","Aluminum Blinds","Vertical Blinds"]},
-  {t:"Shades", href:"#range", sub:["Roller Shades","Roman Shades","Honeycomb Shades","Zebra Shades"]},
-  {t:"Shutters", href:"#range", sub:["Plantation Shutters","Estate Shutters","Cafe Style"]},
-  {t:"Drapes", href:"#range", sub:["Sheers & Drapes","Custom Drapery","Layered Looks"]},
-  {t:"Motorization", href:"#range", sub:["Motorized Shades","Smart Home","Voice Control"]},
-  {t:"Outdoor", href:"#range"},
-  {t:"About", href:"#about"}
-];
 const PILLS = ["Blinds","Shades","Shutters","Drapes"];
 const RANGE = ["Roller Shades","Dual View Zebra Shades","Thermacell Honeycomb Shades","Trilight Shades","Roman Shades","Sheers & Drapes","Estate Plantation Shutters","Patio Retreat Outdoor Shades","Motorized Shades"];
 const RANGE_IMGS = [HERO_IMG,SLIDE_IMGS[0],SLIDE_IMGS[1],SLIDE_IMGS[2],HERO_IMG,SLIDE_IMGS[0],SLIDE_IMGS[1],SLIDE_IMGS[2],HERO_IMG];
@@ -473,15 +437,11 @@ const FAQS = [
   }
 ];
 const FOOT = {
-  COLLECTIONS:["Vara","Rassa","Gamana"],
-  EXPLORE:["Blinds","Shades","Shutters","Drapes","Motorization","Outdoor"],
-  COMPANY:["Become a Dealer","About Us","Warranty","Contact Us","FAQ"],
   SUPPORT:["Free Consultation","Service Areas","Reviews","Financing","Refer a Friend"]
 };
 
 /* ---------- header ---------- */
 function Header(){
-  const [open,setOpen]=useState(false);
   return (
     <>
     <div className="promo-bar">
@@ -493,22 +453,9 @@ function Header(){
     <header className="site">
       <div className="wrap">
         <div className="nav">
-          <a href="/" className="logo logo-image" aria-label="Slick Blinds"><img src="https://slickblinds.com/_next/image/?url=https%3A%2F%2Fslickblindsprod.blob.core.windows.net%2Fassets%2Fassets%2Fslick_Blinds_Logo_2499f82cff.svg&w=256&q=75" alt="Slick Blinds" width="170" height="28" /></a>
-          <nav className="menu">
-            {NAV.map((m,i)=>(
-              <div className="menu-item" key={i}>
-                <a className="menu-link" href={m.href || "#"}>{m.t}{m.sub && <IcCaret className="caret"/>}</a>
-                {m.sub && <div className="dropdown">{m.sub.map((s,j)=><a href={m.href || "#"} key={j}>{s}</a>)}</div>}
-              </div>
-            ))}
-          </nav>
+          <span className="logo logo-image" aria-label="Slick Blinds"><img src="https://slickblinds.com/_next/image/?url=https%3A%2F%2Fslickblindsprod.blob.core.windows.net%2Fassets%2Fassets%2Fslick_Blinds_Logo_2499f82cff.svg&w=256&q=75" alt="Slick Blinds" width="170" height="28" /></span>
           <a href="#consult" className="btn-consult" style={{display:"inline-block"}}>Free Consultation</a>
-          <button className="hamburger" onClick={()=>setOpen(!open)} aria-label="menu"><span/><span/><span/></button>
         </div>
-      </div>
-      <div className={"mobile-menu"+(open?" show":"")} aria-hidden={!open}>
-        {NAV.map((m,i)=><a href={m.href || "#"} key={i} onClick={()=>setOpen(false)}>{m.t}</a>)}
-        <a className="mobile-consult" href="#consult" onClick={()=>setOpen(false)}>Free Consultation</a>
       </div>
     </header>
     </>
@@ -530,6 +477,7 @@ function ConsultForm(){
     if(!sel.length) e.interest="Please choose at least one option";
     if(!f.zip.trim()) e.zip="Please enter your zipcode";
     else if(!/^\d{5}(-\d{4})?$/.test(f.zip.trim())) e.zip="Please enter a valid zipcode";
+    if(!f.name.trim()) e.name="Please enter your name";
     setErr(e);
     if(Object.keys(e).length) return;
     setErr({});
@@ -538,7 +486,6 @@ function ConsultForm(){
 
   const submit=async()=>{
     const e={};
-    if(!f.name.trim()) e.name="Please enter your name";
     if(!/^\S+@\S+\.\S+$/.test(f.email)) e.email="Please enter a valid email";
     if(f.phone.replace(/\D/g,"").length<7) e.phone="Please enter a valid phone";
     if(!f.address.trim()) e.address="Please enter your address";
@@ -578,14 +525,14 @@ function ConsultForm(){
         <div className="fc-q">Your area helps us serve you better</div>
         <div className="field"><span className="fic"><IcPin/></span><input id="hero-first-input" placeholder="Zipcode" value={f.zip} onChange={set("zip")}/></div>
         <div className="err">{err.zip}</div>
+        <div className="field"><span className="fic"><IcUser/></span><input placeholder="Full Name" value={f.name} onChange={set("name")}/></div>
+        <div className="err">{err.name}</div>
         <div className="fc-spacer"/>
         <button className="get-started" onClick={goStep2}>Get Started <IcArrow/></button>
       </>}
 
       {step===2 && <>
         <div className="fc-q" style={{marginTop:24}}>A few details and we'll be in touch</div>
-        <div className="field"><span className="fic"><IcUser/></span><input placeholder="Full Name" value={f.name} onChange={set("name")}/></div>
-        <div className="err">{err.name}</div>
         <div className="field"><span className="fic"><IcMail/></span><input placeholder="Email Address" value={f.email} onChange={set("email")}/></div>
         <div className="err">{err.email}</div>
         <div className="field"><span className="fic"><IcPhone s={18}/></span><input placeholder="Phone Number" value={f.phone} onChange={set("phone")}/></div>
