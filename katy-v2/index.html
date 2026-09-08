@@ -97,15 +97,13 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,37,41,.82) 0%,rgba(33,37,41,.68) 30%,rgba(33,37,41,.40) 52%,rgba(33,37,41,.14) 78%,rgba(33,37,41,.02) 100%)}
 .hero-inner{position:relative;display:grid;grid-template-columns:0.9fr 1.2fr;gap:48px;align-items:stretch;padding:22px 0 24px}
 .hero-copy{display:flex;flex-direction:column}
-.rating{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:40px;padding:8px 16px;font-size:13px;color:#3b3b3b;box-shadow:0 6px 18px rgba(0,0,0,.05);margin-bottom:16px}
+.rating{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 20px;font-size:16px;color:#3b3b3b;box-shadow:0 8px 20px rgba(0,0,0,.08);margin-bottom:16px}
 .rating b{color:#4285F4;font-weight:600}
-.rating .star{color:#f5b800}
+.rating .star{font-size:20px;line-height:1}
 .hero h1{font-family:var(--sans);font-weight:800;font-size:64px;line-height:1.02;letter-spacing:-.02em;color:#fff}
 .hero h1 .accent{color:var(--accent)}
 .hero .sub{font-size:19px;font-weight:600;color:#fff;margin-top:8px;line-height:1.3;max-width:520px}
 .hero .lead{font-size:14.5px;color:rgba(255,255,255,.82);margin-top:10px;max-width:520px;line-height:1.5}
-.lead-wrap{overflow:hidden;max-height:64px;transition:max-height .3s ease}
-.lead-wrap.open{max-height:400px}
 .read-more.hero-read-more{display:flex;width:fit-content;margin-top:8px}
 .rating .g-word{font-weight:700}
 .hero-cta{display:inline-flex;width:fit-content;align-items:center;justify-content:center;gap:9px;background:var(--gold-grad);color:#fff;font-weight:600;text-transform:uppercase;letter-spacing:0;font-size:14px;line-height:24px;padding:16px 32px;border-radius:8px;margin-top:auto;box-shadow:0 10px 22px rgba(189,154,90,.32);transition:.2s}
@@ -323,6 +321,7 @@ h4{font-size:32px!important;line-height:36px!important;font-weight:800!important
 p,.hero .lead,.range .intro,.range .outro,.slide p,.cta p,.faq-a p,.foot-about{font-family:'Montserrat',Arial,sans-serif!important;font-size:17px!important;line-height:30px!important;font-weight:500!important}
 .body-medium,.range-card span,.faq-q,.explore{font-family:'Montserrat',Arial,sans-serif!important;font-size:17px!important;line-height:28px!important;font-weight:500!important}
 .body-small,.rating,.field input,.pill,.step-chip,.back-link,.read-more,.foot-col a,.mobile-menu a,.menu-link{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:24px!important;font-weight:500!important}
+.rating{font-size:16px!important;font-weight:700!important;color:#1a1a1a!important}
 .label,.range-highlight-label,.foot-col h4{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:22px!important;font-weight:500!important;letter-spacing:0!important}
 .btn-consult,.get-started,.cta-gold,.cta-out{font-family:'Montserrat',Arial,sans-serif!important;font-size:16px!important;line-height:24px!important;font-weight:600!important;letter-spacing:0!important;text-transform:none}
 .get-started{text-transform:uppercase!important;font-size:14px!important}
@@ -592,14 +591,12 @@ function Hero(){
         <div className="hero-inner">
           <div className="hero-copy">
             <div className="rating">
-              <span className="g-word"><span style={{color:"#4285F4"}}>G</span><span style={{color:"#EA4335"}}>o</span><span style={{color:"#FBBC05"}}>o</span><span style={{color:"#4285F4"}}>g</span><span style={{color:"#34A853"}}>l</span><span style={{color:"#EA4335"}}>e</span></span> <span className="star">★</span> Rated 4.9/5 by 1000's of happy homes
+              <span className="g-word"><span style={{color:"#4285F4"}}>G</span><span style={{color:"#EA4335"}}>o</span><span style={{color:"#FBBC05"}}>o</span><span style={{color:"#4285F4"}}>g</span><span style={{color:"#34A853"}}>l</span><span style={{color:"#EA4335"}}>e</span></span> <span className="star">⭐</span> Rated 4.9/5 by 1000's of happy homes
             </div>
             <h1>Custom Blinds & Shades in <span className="accent">Katy &amp; Cinco Ranch</span></h1>
             <div className="sub">Window Treatments Made for Your Home, Your Light, Your Life</div>
-            <div className={"lead-wrap"+(leadOpen?" open":"")}>
-              <p className="lead">Your windows are part of how your home feels throughout the day. We help homeowners in Katy and Cinco Ranch choose custom blinds and shades that bring together light control, privacy, comfort and design.</p>
-              <p className="lead">From large living-room windows and two-story spaces to bedrooms that need better light control, every treatment is measured and made for the window it belongs to.</p>
-            </div>
+            <p className="lead">Your windows are part of how your home feels throughout the day. We help homeowners in Katy and Cinco Ranch choose custom blinds and shades that bring together light control, privacy, comfort and design.</p>
+            {leadOpen && <p className="lead">From large living-room windows and two-story spaces to bedrooms that need better light control, every treatment is measured and made for the window it belongs to.</p>}
             <button className={"read-more hero-read-more"+(leadOpen?" open":"")} onClick={()=>setLeadOpen(!leadOpen)}>
               {leadOpen ? "Read Less" : "Read More"} <IcCaret className="caret"/>
             </button>
