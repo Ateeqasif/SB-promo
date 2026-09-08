@@ -92,7 +92,7 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hamburger span{width:24px;height:2px;background:#222;border-radius:2px}
 
 /* ---------- HERO ---------- */
-.hero{position:relative;overflow:hidden}
+.hero{position:relative;overflow:hidden;min-height:calc(100vh - 96px);display:flex;flex-direction:column;justify-content:center}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center right;background-repeat:no-repeat}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,37,41,.82) 0%,rgba(33,37,41,.68) 30%,rgba(33,37,41,.40) 52%,rgba(33,37,41,.14) 78%,rgba(33,37,41,.02) 100%)}
 .hero-inner{position:relative;display:grid;grid-template-columns:0.9fr 1.2fr;gap:48px;align-items:start;padding:22px 0 24px}
