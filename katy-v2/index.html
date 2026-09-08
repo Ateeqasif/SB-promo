@@ -213,6 +213,31 @@ footer.site{background:#0a0a0a;color:#cfc6bb;padding:44px 0 0}
 .foot-bottom .links{display:flex;gap:26px}
 .foot-bottom .links a:hover{color:#fff}
 
+/* ---------- LEGAL MODAL ---------- */
+.legal-overlay{position:fixed;inset:0;background:rgba(20,17,14,.62);display:flex;align-items:center;justify-content:center;padding:24px;z-index:999}
+.legal-modal{background:#fff;width:100%;max-width:760px;max-height:86vh;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 40px 90px rgba(0,0,0,.35)}
+.legal-modal-bar{height:5px;background:var(--gold-grad);flex:0 0 auto}
+.legal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:26px 32px 18px;border-bottom:1px solid var(--line-2);flex:0 0 auto}
+.legal-head h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--serif-ink);line-height:1.25}
+.legal-date{font-size:13px;color:var(--muted-2);margin-top:4px}
+.legal-close{width:36px;height:36px;border-radius:50%;border:1px solid var(--line-2);background:#fff;display:grid;place-items:center;color:var(--ink);flex:0 0 auto;transition:.15s}
+.legal-close:hover{background:#f5f0e8;border-color:var(--gold)}
+.legal-body{overflow-y:auto;padding:24px 32px 36px;font-family:var(--sans);color:var(--ink);line-height:1.7;font-size:14.5px}
+.legal-h1{font-size:16.5px;font-weight:700;color:var(--ink);margin:26px 0 8px;padding-left:12px;border-left:3px solid var(--gold)}
+.legal-h1:first-child{margin-top:0}
+.legal-h2{font-size:15px;font-weight:700;color:var(--ink);margin:18px 0 6px}
+.legal-p{margin:10px 0;color:#4a4a4a}
+.legal-li{margin:6px 0 6px 20px;padding-left:8px;position:relative;color:#4a4a4a}
+.legal-li::before{content:"";position:absolute;left:-14px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.legal-table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:13.5px}
+.legal-table th,.legal-table td{border:1px solid var(--line-2);padding:9px 12px;text-align:left}
+.legal-table th{background:var(--range-card);color:var(--ink);font-weight:700}
+@media(max-width:640px){
+  .legal-head{padding:20px 20px 14px}
+  .legal-body{padding:18px 20px 28px}
+  .legal-head h3{font-size:20px}
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:1180px){
   .hero h1{font-size:clamp(42px,5.4vw,60px)}
@@ -363,6 +388,7 @@ const IcCheck = ()=>(<svg width="18" height="18" viewBox="0 0 24 24" fill="none"
 const IcCal = ()=>(<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>);
 const IcFb = ()=>(<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.3c0-.9.3-1.5 1.6-1.5H17.6V.1C17.2.1 16 0 14.7 0 12 0 10.2 1.6 10.2 4v2H7.5v3h2.7v9H14V9Z"/></svg>);
 const IcIg = ()=>(<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>);
+const IcX = ()=>(<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>);
 
 /* ---------- data ---------- */
 const PILLS = ["Blinds","Shades","Shutters","Drapes"];
@@ -437,6 +463,191 @@ const FAQS = [
     a: <p>Yes. Custom measurement and professional installation are part of the service.</p>
   }
 ];
+const LEGAL_WARRANTY = [
+  {t:"p",x:"Effective Date: September 8, 2026"},
+  {t:"p",x:"These Warranty, Sales Terms and Conditions apply to products purchased from Slick Blinds, LLC or through an authorized Slick Blinds dealer. By approving a quotation, paying a deposit, or accepting delivery or installation, you agree to these terms."},
+  {t:"h1",x:"1. Orders and Quotations"},
+  {t:"p",x:"All custom-product orders must be approved in writing and accompanied by a deposit equal to 50% of the total order amount, unless different payment terms are stated in the quotation."},
+  {t:"p",x:"Production and estimated delivery timelines begin after:"},
+  {t:"li",x:"The quotation and product specifications have been approved;"},
+  {t:"li",x:"Final measurements have been confirmed; and"},
+  {t:"li",x:"The required deposit has been received."},
+  {t:"p",x:"Prices, taxes, discounts, installation charges, and any additional services will be stated in the approved quotation. The remaining balance is due at installation unless otherwise agreed in writing."},
+  {t:"p",x:"Verbal statements or agreements do not modify an order unless confirmed in writing by Slick Blinds or the authorized dealer handling the order."},
+  {t:"h1",x:"2. Custom-Made Products"},
+  {t:"p",x:"Most Slick Blinds products are manufactured according to customer-approved measurements, materials, colors, operating systems, and other specifications."},
+  {t:"p",x:"Customers must carefully review and approve all specifications before production begins. Natural variations in fabric, wood grain, weave, texture, and color may occur and are not considered manufacturing defects."},
+  {t:"p",x:"Images, digital renderings, and samples are intended as visual references. Actual colors may vary slightly because of lighting, display settings, dye lots, and natural material differences."},
+  {t:"h1",x:"3. Changes and Cancellations"},
+  {t:"p",x:"An order may be changed or cancelled only before production begins and with written approval from the seller."},
+  {t:"p",x:"Once production has started, custom-made products cannot normally be changed, cancelled, returned, or refunded except where required by applicable law or covered by the SlickShield Warranty."},
+  {t:"p",x:"If a customer refuses delivery or installation without a valid product or service issue, the customer may be responsible for completed work, custom materials, storage, transportation, and other reasonable costs incurred."},
+  {t:"h1",x:"4. Delivery and Installation"},
+  {t:"p",x:"Delivery and installation dates are estimates and are not guaranteed. Timelines may be affected by product availability, supply-chain interruptions, transportation delays, severe weather, labor shortages, government action, or other circumstances beyond reasonable control."},
+  {t:"p",x:"The customer is responsible for:"},
+  {t:"li",x:"Providing safe and reasonable access to the installation location;"},
+  {t:"li",x:"Removing furniture or obstructions where reasonably requested;"},
+  {t:"li",x:"Ensuring an adult is present for the scheduled appointment; and"},
+  {t:"li",x:"Informing the installer about concealed wiring, pipes, alarms, or other hazards."},
+  {t:"p",x:"Additional charges may apply if installation cannot be completed because the site is inaccessible, unsafe, unfinished, or materially different from the conditions present during measurement."},
+  {t:"h1",x:"5. Inspection and Reporting Issues"},
+  {t:"p",x:"Customers should inspect products promptly following delivery and installation."},
+  {t:"p",x:"Damage visible at delivery or installation must be reported to the authorized Slick Blinds dealer within 30 days. Other warranty claims may be submitted during the applicable warranty period."},
+  {t:"p",x:"Failure to report visible delivery or installation damage within 30 days may affect coverage for that specific issue but does not eliminate rights that cannot legally be waived."},
+  {t:"h1",x:"6. SlickShield Worry-Free Warranty"},
+  {t:"p",x:"Slick Blinds products installed by an authorized Slick Blinds dealer are protected under the SlickShield Worry-Free Warranty."},
+  {t:"h2",x:"Three-Year Accidental Damage Protection"},
+  {t:"p",x:"For three years from the purchase date, accidental household damage - including damage involving children, pets, or everyday accidents - is eligible for one repair or replacement without charge for covered parts or products. A nominal technician trip fee may apply."},
+  {t:"h2",x:"Coverage by Component"},
+  {t:"table",rows:[["Product or Component","Coverage"],["Headrails, brackets, tilt/lift mechanisms and wands","Lifetime"],["Cords, ladders and lift systems","7 years"],["Fabric, vinyl, wood and faux-wood finish","5 years"],["Motors and remote/app controls","5 years"],["Everyday accidental damage","3 years; one repair or replacement"],["Exterior shade and drapery structural hardware","Lifetime"],["Exterior motors and controls","5 years"],["Exterior fabric and mesh","10 years"],["Shutter frames, panels and structural hardware","Lifetime"],["Shutter painted or stained finish","5 years"]]},
+  {t:"p",x:"“Lifetime” means for as long as the original purchaser owns the product at its original installed location, subject to the exclusions below."},
+  {t:"h1",x:"7. Installation Warranty"},
+  {t:"p",x:"Installation workmanship performed through an authorized Slick Blinds dealer is covered for one year from the installation date."},
+  {t:"p",x:"If an eligible issue is confirmed to have resulted from installation workmanship, the dealer will correct the issue without an additional installation charge."},
+  {t:"h1",x:"8. Warranty Exclusions"},
+  {t:"p",x:"Unless specifically covered by the three-year accidental-damage protection, the warranty does not cover:"},
+  {t:"li",x:"Normal wear and tear after the applicable coverage period;"},
+  {t:"li",x:"Damage caused by misuse, abuse, unauthorized alteration, or improper maintenance;"},
+  {t:"li",x:"Installation performed by someone other than an authorized Slick Blinds dealer;"},
+  {t:"li",x:"Damage caused by failure to follow operating, cleaning, or maintenance instructions;"},
+  {t:"li",x:"Damage caused by fire, flooding, storms, natural disasters, or other natural calamities;"},
+  {t:"li",x:"Natural variations in wood grain, fabric weave, texture, or color;"},
+  {t:"li",x:"Minor fading or discoloration resulting from long-term sunlight or moisture exposure beyond the applicable coverage period; or"},
+  {t:"li",x:"Visible delivery or installation damage not reported within 30 days."},
+  {t:"h1",x:"9. Warranty Claims"},
+  {t:"p",x:"To submit a claim, contact the authorized Slick Blinds dealer identified on your purchase documents and provide:"},
+  {t:"li",x:"Your name and contact information;"},
+  {t:"li",x:"Original order number or proof of purchase;"},
+  {t:"li",x:"A description of the issue; and"},
+  {t:"li",x:"Photographs or videos when reasonably requested."},
+  {t:"p",x:"Slick Blinds or the authorized dealer will determine whether an eligible product should be repaired, replaced, or resolved using a comparable remedy."},
+  {t:"p",x:"If the original product has been discontinued, a reasonably comparable replacement may be provided. Exact matches to older products, colors, or materials cannot be guaranteed. Only the defective or damaged product is covered, even when matching products are installed in the same room."},
+  {t:"h1",x:"10. Transferability"},
+  {t:"p",x:"The warranty applies to the original purchaser and original installation location. It is not transferable if the product is removed from that location or the property is sold, except where applicable law requires otherwise."},
+  {t:"h1",x:"11. Limitation of Liability"},
+  {t:"p",x:"To the maximum extent permitted by law, Slick Blinds and its authorized dealers will not be liable for indirect, incidental, special, consequential, or punitive damages arising from a product, installation, delay, or breach of these terms."},
+  {t:"p",x:"Total liability relating to an order will not exceed the amount paid for the affected product or service. These limitations do not exclude rights or remedies that cannot legally be limited under applicable state or federal law."},
+  {t:"h1",x:"12. Governing Law"},
+  {t:"p",x:"These terms are governed by the laws of the State of Minnesota, without regard to conflict-of-law principles, unless applicable consumer-protection law requires otherwise."},
+  {t:"h1",x:"13. Contact Us"},
+  {t:"p",x:"Slick Blinds, LLC\n16718 House & Hahl Road, Suite E2\nCypress, Texas 77433\nPhone: (800) 348-6530\nEmail: admin@slickblinds.com"}
+];
+const LEGAL_PRIVACY = [
+  {t:"p",x:"Effective Date: September 8, 2026"},
+  {t:"p",x:"Slick Blinds, LLC and its authorized dealer network (“Slick Blinds,” “we,” “us,” or “our”) respect your privacy. This Privacy Policy explains how we collect, use, disclose, retain, and protect personal information when you visit slickblinds.com, request a consultation, communicate with us, or use our related services."},
+  {t:"h1",x:"1. Personal Information We Collect"},
+  {t:"p",x:"Depending on how you interact with us, we may collect the following information."},
+  {t:"h2",x:"Information You Provide"},
+  {t:"li",x:"Name, email address, telephone number, and mailing address;"},
+  {t:"li",x:"ZIP code, city, and service location;"},
+  {t:"li",x:"Consultation requests and appointment information;"},
+  {t:"li",x:"Product interests, window-treatment preferences, measurements, and project details;"},
+  {t:"li",x:"Order, transaction, warranty, and customer-service information;"},
+  {t:"li",x:"Photographs or videos submitted for consultation or warranty purposes;"},
+  {t:"li",x:"Messages, feedback, reviews, and other communications; and"},
+  {t:"li",x:"Marketing preferences and communication consent."},
+  {t:"p",x:"Payment information may be processed by authorized dealers or third-party payment processors. Slick Blinds does not intend to store complete payment-card information through its website."},
+  {t:"h2",x:"Information Collected Automatically"},
+  {t:"li",x:"IP address;"},
+  {t:"li",x:"Browser, device, and operating-system information;"},
+  {t:"li",x:"Approximate location derived from IP address;"},
+  {t:"li",x:"Pages viewed and actions taken;"},
+  {t:"li",x:"Referring website and campaign information;"},
+  {t:"li",x:"Dates and times of visits; and"},
+  {t:"li",x:"Cookie and advertising identifiers."},
+  {t:"h1",x:"2. Sources of Personal Information"},
+  {t:"p",x:"We may collect personal information:"},
+  {t:"li",x:"Directly from you;"},
+  {t:"li",x:"Automatically through cookies and similar technologies;"},
+  {t:"li",x:"From authorized Slick Blinds dealers;"},
+  {t:"li",x:"From service providers and business partners;"},
+  {t:"li",x:"From advertising and analytics platforms; and"},
+  {t:"li",x:"From publicly available sources where permitted by law."},
+  {t:"h1",x:"3. How We Use Personal Information"},
+  {t:"p",x:"We may use personal information to:"},
+  {t:"li",x:"Respond to inquiries and schedule consultations;"},
+  {t:"li",x:"Route requests to an authorized dealer serving your location;"},
+  {t:"li",x:"Prepare quotations and process orders;"},
+  {t:"li",x:"Coordinate measurement, delivery, installation, and support;"},
+  {t:"li",x:"Administer warranties and resolve complaints;"},
+  {t:"li",x:"Send appointment reminders and service communications;"},
+  {t:"li",x:"Send promotional emails or text messages with consent where required;"},
+  {t:"li",x:"Operate, secure, analyze, and improve our website;"},
+  {t:"li",x:"Measure advertising and marketing performance;"},
+  {t:"li",x:"Detect fraud, misuse, or security incidents;"},
+  {t:"li",x:"Maintain business and transaction records;"},
+  {t:"li",x:"Comply with legal obligations; and"},
+  {t:"li",x:"Establish, exercise, or defend legal claims."},
+  {t:"h1",x:"4. How We Disclose Personal Information"},
+  {t:"p",x:"We may disclose personal information to:"},
+  {t:"li",x:"Authorized dealers: To respond to inquiries and provide consultations, quotations, installation, warranty, and support."},
+  {t:"li",x:"Service providers: Including website hosting, CRM, communications, analytics, advertising, scheduling, payment, and IT-support providers."},
+  {t:"li",x:"Professional advisers: Including lawyers, accountants, auditors, and insurers."},
+  {t:"li",x:"Government or legal authorities: When required by law or reasonably necessary to protect legal rights or safety."},
+  {t:"li",x:"Business transaction participants: In connection with a merger, acquisition, financing, restructuring, or sale of business assets."},
+  {t:"p",x:"We do not disclose SMS opt-in consent to third parties or affiliates for their independent marketing purposes."},
+  {t:"h1",x:"5. Sale, Sharing and Targeted Advertising"},
+  {t:"p",x:"We do not sell personal information in exchange for money."},
+  {t:"p",x:"However, our use of analytics or advertising cookies may be considered “sharing,” “targeted advertising,” or a “sale” under certain state privacy laws."},
+  {t:"p",x:"Where required, visitors may opt out through the Your Privacy Choices link or cookie-preference tool displayed on the website."},
+  {t:"h1",x:"6. Cookies and Similar Technologies"},
+  {t:"p",x:"We use cookies, pixels, web beacons, and similar technologies to:"},
+  {t:"li",x:"Keep the website functioning;"},
+  {t:"li",x:"Remember visitor preferences;"},
+  {t:"li",x:"Understand website traffic and performance;"},
+  {t:"li",x:"Measure marketing campaigns; and"},
+  {t:"li",x:"Provide relevant advertising."},
+  {t:"p",x:"You can manage non-essential cookies through our cookie-preference tool or your browser settings. Blocking certain cookies may affect website functionality."},
+  {t:"p",x:"Where legally required, we will recognize supported browser-based opt-out preference signals, such as Global Privacy Control."},
+  {t:"h1",x:"7. Email and SMS Communications"},
+  {t:"p",x:"With your consent where required, Slick Blinds or the dealer handling your inquiry may contact you by email or text message regarding appointments, products, services, and promotions."},
+  {t:"p",x:"Consent to receive marketing messages is not a condition of purchase. Message frequency may vary. Standard message and data rates may apply."},
+  {t:"li",x:"Reply STOP to unsubscribe from text messages."},
+  {t:"li",x:"Reply HELP for assistance."},
+  {t:"li",x:"Use the unsubscribe link in a marketing email to stop promotional emails."},
+  {t:"p",x:"We may still send non-marketing communications related to active appointments, orders, installations, warranty claims, or legal notices."},
+  {t:"h1",x:"8. Data Retention"},
+  {t:"p",x:"We retain personal information only for as long as reasonably necessary to:"},
+  {t:"li",x:"Provide requested services;"},
+  {t:"li",x:"Maintain transaction and warranty records;"},
+  {t:"li",x:"Meet accounting, tax, and legal requirements;"},
+  {t:"li",x:"Resolve disputes;"},
+  {t:"li",x:"Enforce agreements; and"},
+  {t:"li",x:"Protect the security and integrity of our services."},
+  {t:"p",x:"Retention periods may vary based on the type of information and applicable legal requirements."},
+  {t:"h1",x:"9. Your Privacy Rights"},
+  {t:"p",x:"Depending on your state of residence and applicable law, you may have the right to:"},
+  {t:"li",x:"Confirm whether we process your personal information;"},
+  {t:"li",x:"Access personal information we maintain about you;"},
+  {t:"li",x:"Correct inaccurate information;"},
+  {t:"li",x:"Request deletion of personal information;"},
+  {t:"li",x:"Obtain a portable copy of certain information;"},
+  {t:"li",x:"Opt out of sale, sharing, or targeted advertising;"},
+  {t:"li",x:"Restrict certain uses of sensitive personal information;"},
+  {t:"li",x:"Withdraw consent where processing is based on consent; and"},
+  {t:"li",x:"Appeal a decision concerning a privacy request."},
+  {t:"p",x:"We will not discriminate against you for exercising an applicable privacy right."},
+  {t:"h1",x:"10. Submitting a Privacy Request"},
+  {t:"p",x:"To submit a privacy request, contact us at:"},
+  {t:"p",x:"Email: admin@slickblinds.com\nPhone: (800) 348-6530"},
+  {t:"p",x:"Please provide enough information for us to identify your records and understand your request. We may verify your identity before processing the request."},
+  {t:"p",x:"Where legally permitted, an authorized agent may submit a request on your behalf. We may request documentation confirming the agent’s authority."},
+  {t:"p",x:"If we deny your request, you may appeal by replying to our decision and writing “Privacy Request Appeal” in the subject line."},
+  {t:"h1",x:"11. Children’s Privacy"},
+  {t:"p",x:"Our website and services are not directed to children under 16. We do not knowingly collect personal information from children under 16."},
+  {t:"p",x:"If you believe a child has submitted personal information to us, please contact us so that we can review and delete it where appropriate."},
+  {t:"h1",x:"12. Data Security"},
+  {t:"p",x:"We use reasonable administrative, technical, and physical safeguards designed to protect personal information."},
+  {t:"p",x:"No website, electronic transmission, or storage system can be guaranteed to be completely secure. Therefore, we cannot guarantee absolute security."},
+  {t:"h1",x:"13. Third-Party Websites"},
+  {t:"p",x:"Our website may contain links to third-party websites or services. Their privacy practices are governed by their own policies, and Slick Blinds is not responsible for those practices."},
+  {t:"h1",x:"14. Changes to This Policy"},
+  {t:"p",x:"We may update this Privacy Policy periodically. The revised version will be posted on this page with an updated effective date."},
+  {t:"p",x:"If changes materially affect how we use previously collected personal information, we will provide additional notice where required by law."},
+  {t:"h1",x:"15. Contact Us"},
+  {t:"p",x:"Slick Blinds, LLC\n16718 House & Hahl Road, Suite E2\nCypress, Texas 77433\nEmail: admin@slickblinds.com\nPhone: (800) 348-6530"}
+];
+
 const FOOT = {
   SUPPORT:["Free Consultation"]
 };
@@ -817,7 +1028,47 @@ function Faq(){
 }
 
 /* ---------- footer ---------- */
+function LegalBlock(p){
+  const b=p.b;
+  if(b.t==="h1") return <h4 className="legal-h1">{b.x}</h4>;
+  if(b.t==="h2") return <h5 className="legal-h2">{b.x}</h5>;
+  if(b.t==="li") return <div className="legal-li">{b.x}</div>;
+  if(b.t==="table") return (
+    <table className="legal-table"><tbody>
+      {b.rows.map((row,ri)=>(
+        <tr key={ri}>{row.map((cell,ci)=> ri===0 ? <th key={ci}>{cell}</th> : <td key={ci}>{cell}</td>)}</tr>
+      ))}
+    </tbody></table>
+  );
+  return <p className="legal-p">{b.x.split("\n").map((line,i)=><React.Fragment key={i}>{i>0 && <br/>}{line}</React.Fragment>)}</p>;
+}
+
+function LegalModal(p){
+  useEffect(()=>{
+    const onKey=(e)=>{ if(e.key==="Escape") p.onClose(); };
+    document.addEventListener("keydown",onKey);
+    const prevOverflow=document.body.style.overflow;
+    document.body.style.overflow="hidden";
+    return ()=>{ document.removeEventListener("keydown",onKey); document.body.style.overflow=prevOverflow; };
+  },[]);
+  return (
+    <div className="legal-overlay" onClick={p.onClose}>
+      <div className="legal-modal" onClick={(e)=>e.stopPropagation()}>
+        <div className="legal-modal-bar"/>
+        <div className="legal-head">
+          <h3>{p.title}</h3>
+          <button className="legal-close" onClick={p.onClose} aria-label="Close"><IcX/></button>
+        </div>
+        <div className="legal-body">
+          {p.blocks.map((b,i)=><LegalBlock b={b} key={i}/>)}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Footer(){
+  const [legal,setLegal]=useState(null);
   return (
     <footer className="site">
       <div className="wrap">
@@ -839,9 +1090,14 @@ function Footer(){
         </div>
         <div className="foot-bottom">
           <span>© 2026 Slick Blinds. All rights reserved.</span>
-          <div className="links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+          <div className="links">
+            <a href="#" onClick={(e)=>{e.preventDefault();setLegal("privacy");}}>Privacy Policy</a>
+            <a href="#" onClick={(e)=>{e.preventDefault();setLegal("warranty");}}>Terms of Service</a>
+          </div>
         </div>
       </div>
+      {legal==="privacy" && <LegalModal title="Privacy Policy" blocks={LEGAL_PRIVACY} onClose={()=>setLegal(null)}/>}
+      {legal==="warranty" && <LegalModal title="Warranty, Sales Terms & Conditions" blocks={LEGAL_WARRANTY} onClose={()=>setLegal(null)}/>}
     </footer>
   );
 }
