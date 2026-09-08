@@ -106,9 +106,11 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero .lead{font-size:14px;color:rgba(255,255,255,.82);margin-top:8px;max-width:520px;line-height:1.45}
 .read-more.hero-read-more{display:flex;width:fit-content;margin-top:6px}
 .rating .g-word{font-weight:400}
-.offer-badge{display:inline-flex;width:fit-content;align-items:center;justify-content:center;gap:8px;background:var(--gold-grad);color:#fff;font-weight:600;letter-spacing:0;font-size:13px;line-height:16px;padding:9px 20px;border-radius:10px;margin-top:auto;position:relative;top:-7px;box-shadow:0 8px 18px rgba(189,154,90,.32),0 0 22px rgba(241,134,5,.55);transition:.2s;text-decoration:none}
-.offer-badge svg{flex:0 0 auto}
-.offer-badge:hover{filter:brightness(1.04);transform:translateY(-1px)}
+.offer-ribbon{position:relative;display:block;width:fit-content;margin-top:14px;text-decoration:none;filter:drop-shadow(0 8px 16px rgba(241,134,5,.4));transition:.2s}
+.offer-ribbon:hover{transform:translateY(-2px)}
+.offer-ribbon-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:14px;color:#fff;text-align:center;pointer-events:none}
+.offer-ribbon-text .l1{font-size:16px;font-weight:800;letter-spacing:.02em;line-height:1.1}
+.offer-ribbon-text .l2{font-size:10px;font-weight:700;letter-spacing:.03em;margin-top:3px;max-width:150px;line-height:1.3;text-transform:uppercase}
 
 /* ---------- FORM CARD ---------- */
 .form-card{background:#fff;border:1px solid var(--line-2);border-radius:16px;box-shadow:0 30px 70px rgba(29,24,21,.12);padding:18px 32px;display:flex;flex-direction:column;min-height:320px}
@@ -235,7 +237,7 @@ footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
   .hamburger{display:flex}
   .hero-inner{grid-template-columns:1fr;gap:34px;padding:40px 0 56px}
   .hero h1{font-size:clamp(36px,8vw,50px)}
-  .offer-badge{top:0;margin-top:20px}
+  .offer-ribbon{margin-top:20px}
   .hero .sub{font-size:19px}
   .hero-bg{background-position:center}
   .hero-bg::after{background:linear-gradient(180deg,rgba(33,37,41,.40) 0%,rgba(33,37,41,.68) 45%,rgba(33,37,41,.82) 100%)}
@@ -255,7 +257,7 @@ footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
   .rating{gap:8px;padding:9px 14px}
   .foot-grid{grid-template-columns:1fr 1fr}
   .foot-about{max-width:100%}
-  .offer-badge{width:100%;justify-content:center;top:0;margin-top:20px}
+  .offer-ribbon{margin-top:20px}
   .faq-q{font-size:15.5px;padding:18px 20px}
   .faq-a{padding:0 20px}
   .cta-btns{flex-direction:column;align-items:stretch}
@@ -595,6 +597,38 @@ function ConsultForm(){
 }
 
 /* ---------- hero ---------- */
+function buildRibbonPath(w,h,tabW,tabBaseY,bodyBottomY,teeth){
+  const toothW = w/teeth;
+  let d = `M 0 ${tabBaseY} L ${tabW/2} 0 L ${tabW} ${tabBaseY} L ${w-tabW} ${tabBaseY} L ${w-tabW/2} 0 L ${w} ${tabBaseY} L ${w} ${bodyBottomY} `;
+  for(let i=0;i<teeth;i++){
+    const peakX = w - i*toothW;
+    const valleyX = peakX - toothW/2;
+    const nextPeakX = peakX - toothW;
+    d += `L ${valleyX} ${h} L ${nextPeakX} ${bodyBottomY} `;
+  }
+  d += `L 0 ${tabBaseY} Z`;
+  return d;
+}
+function OfferRibbon(){
+  const w=300, h=104, tabW=26, tabBaseY=16, bodyBottomY=84, teeth=7;
+  return (
+    <a className="offer-ribbon" href="#consult">
+      <svg viewBox={`0 0 ${w} ${h+8}`} width={w} height={h+8}>
+        <defs>
+          <linearGradient id="ribbonGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#F18605"/>
+            <stop offset="100%" stopColor="#E06D07"/>
+          </linearGradient>
+        </defs>
+        <path d={buildRibbonPath(w,h,tabW,tabBaseY,bodyBottomY,teeth)} fill="url(#ribbonGrad)"/>
+      </svg>
+      <div className="offer-ribbon-text">
+        <div className="l1">GET FREE</div>
+        <div className="l2">In-Home Consultations</div>
+      </div>
+    </a>
+  );
+}
 function Hero(){
   const [leadOpen,setLeadOpen]=useState(false);
   return (
@@ -613,7 +647,7 @@ function Hero(){
             <button className={"read-more hero-read-more"+(leadOpen?" open":"")} onClick={()=>setLeadOpen(!leadOpen)}>
               {leadOpen ? "Read Less" : "Read More"} <IcCaret className="caret"/>
             </button>
-            <a className="offer-badge" href="#consult">Offering Free In-Home Consultations</a>
+            <OfferRibbon/>
           </div>
           <ConsultForm/>
         </div>
