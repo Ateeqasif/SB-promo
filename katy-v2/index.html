@@ -499,6 +499,18 @@ function ConsultForm(){
   const set=(k)=>(e)=>setF({...f,[k]:e.target.value});
   const toggle=(p)=>setSel(sel.includes(p)?sel.filter(x=>x!==p):[...sel,p]);
 
+  const goStep2=()=>{
+    const e={};
+    if(!sel.length) e.interest="Please choose at least one option";
+    if(!f.address.trim()) e.address="Please enter your address";
+    if(!f.zip.trim()) e.zip="Please enter your zipcode";
+    else if(!/^\d{5}(-\d{4})?$/.test(f.zip.trim())) e.zip="Please enter a valid zipcode";
+    setErr(e);
+    if(Object.keys(e).length) return;
+    setErr({});
+    setStep(2);
+  };
+
   const submit=async()=>{
     const e={};
     if(!f.name.trim()) e.name="Please enter your name";
@@ -535,10 +547,13 @@ function ConsultForm(){
         <div className="pills">
           {PILLS.map(p=><button key={p} className={"pill"+(sel.includes(p)?" on":"")} onClick={()=>toggle(p)}>{p}</button>)}
         </div>
+        {err.interest && <div className="err">{err.interest}</div>}
         <div className="fc-q">Your area helps us serve you better</div>
         <div className="field"><span className="fic"><IcHome/></span><input placeholder="Address Line" value={f.address} onChange={set("address")}/></div>
+        {err.address && <div className="err">{err.address}</div>}
         <div className="field"><span className="fic"><IcPin/></span><input placeholder="Zipcode" value={f.zip} onChange={set("zip")}/></div>
-        <button className="get-started" onClick={()=>setStep(2)}>Get Started <IcArrow/></button>
+        {err.zip && <div className="err">{err.zip}</div>}
+        <button className="get-started" onClick={goStep2}>Get Started <IcArrow/></button>
       </>}
 
       {step===2 && <>
