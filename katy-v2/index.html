@@ -97,7 +97,7 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,37,41,.82) 0%,rgba(33,37,41,.68) 30%,rgba(33,37,41,.40) 52%,rgba(33,37,41,.14) 78%,rgba(33,37,41,.02) 100%)}
 .hero-inner{position:relative;display:grid;grid-template-columns:0.9fr 1.2fr;gap:48px;align-items:stretch;padding:22px 0 24px}
 .hero-copy{display:flex;flex-direction:column}
-.rating{display:inline-flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,.32);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:10px 16px;font-size:13px;color:#3b3b3b;box-shadow:0 6px 18px rgba(0,0,0,.12);margin-bottom:16px;max-width:380px;white-space:normal;line-height:1.5}
+.rating{display:inline-flex;align-self:flex-start;width:fit-content;align-items:center;gap:10px;background:rgba(255,255,255,.32);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.5);border-radius:40px;padding:10px 16px;font-size:13px;color:#3b3b3b;box-shadow:0 6px 18px rgba(0,0,0,.12);margin-bottom:16px;white-space:nowrap}
 .rating b{color:#4285F4;font-weight:600}
 .rating .star{color:#f5b800}
 .hero h1{font-family:var(--sans);font-weight:800;font-size:64px;line-height:1.02;letter-spacing:-.02em;color:#fff}
@@ -105,7 +105,7 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero .sub{font-size:19px;font-weight:600;color:#fff;margin-top:8px;line-height:1.3;max-width:520px}
 .hero .lead{font-size:13.5px;color:rgba(255,255,255,.82);margin-top:10px;max-width:520px;line-height:1.45}
 .read-more.hero-read-more{display:flex;width:fit-content;margin-top:8px}
-.rating .g-word{font-weight:700}
+.rating .g-word{font-weight:400}
 .hero-cta{display:inline-flex;width:fit-content;align-items:center;justify-content:center;gap:9px;background:var(--gold-grad);color:#fff;font-weight:600;text-transform:uppercase;letter-spacing:0;font-size:14px;line-height:24px;padding:16px 32px;border-radius:8px;margin-top:auto;box-shadow:0 10px 22px rgba(189,154,90,.32);transition:.2s}
 .hero-cta:hover{filter:brightness(1.04);transform:translateY(-1px)}
 
@@ -242,7 +242,7 @@ footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
   .fc-title{font-size:26px}
 }
 @media(max-width:640px){
-  .rating{max-width:280px;white-space:normal}
+  .rating{gap:8px;padding:9px 14px}
   .foot-grid{grid-template-columns:1fr 1fr}
   .foot-about{max-width:100%}
   .hero-cta{width:100%;justify-content:center}
