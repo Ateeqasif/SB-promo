@@ -95,7 +95,7 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero{position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center right;background-repeat:no-repeat}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,37,41,.82) 0%,rgba(33,37,41,.68) 30%,rgba(33,37,41,.40) 52%,rgba(33,37,41,.14) 78%,rgba(33,37,41,.02) 100%)}
-.hero-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;padding:35px 0 45px}
+.hero-inner{position:relative;display:grid;grid-template-columns:0.9fr 1.2fr;gap:48px;align-items:start;padding:35px 0 45px}
 .rating{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:40px;padding:9px 18px;font-size:14px;color:#3b3b3b;box-shadow:0 6px 18px rgba(0,0,0,.05);margin-bottom:30px}
 .rating b{color:#4285F4;font-weight:600}
 .rating .star{color:#f5b800}
@@ -104,11 +104,11 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero .sub{font-size:22px;font-weight:600;color:#fff;margin-top:10px;line-height:1.35;max-width:520px}
 .hero .lead{font-size:16px;color:rgba(255,255,255,.82);margin-top:18px;max-width:520px;line-height:1.7}
 .rating .g-word{font-weight:700}
-.hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--gold-grad);color:#fff;font-weight:700;font-size:16px;padding:16px 32px;border-radius:10px;margin-top:30px;box-shadow:0 14px 30px rgba(189,154,90,.32);transition:.2s}
+.hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--gold-grad);color:#fff;font-weight:700;font-size:14px;padding:12px 24px;border-radius:8px;margin-top:24px;box-shadow:0 10px 22px rgba(189,154,90,.32);transition:.2s}
 .hero-cta:hover{filter:brightness(1.04);transform:translateY(-1px)}
 
 /* ---------- FORM CARD ---------- */
-.form-card{background:#fff;border:1px solid var(--line-2);border-radius:16px;box-shadow:0 30px 70px rgba(29,24,21,.12);padding:34px;display:flex;flex-direction:column;min-height:600px}
+.form-card{background:#fff;border:1px solid var(--line-2);border-radius:16px;box-shadow:0 30px 70px rgba(29,24,21,.12);padding:28px 40px;display:flex;flex-direction:column;min-height:460px}
 .fc-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
 .fc-title{font-family:var(--serif);font-size:32px;font-weight:600;color:var(--serif-ink);line-height:1.15;max-width:330px}
 .step-chip{font-size:13px;color:var(--muted-2);white-space:nowrap;padding-top:6px}
@@ -171,9 +171,9 @@ section{position:relative}
 .cta h2{font-family:var(--serif);font-size:48px;font-weight:500}
 .cta p{color:#c7bdb2;max-width:640px;margin:22px auto 0;font-size:17px;line-height:1.6}
 .cta-btns{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
-.cta-gold{background:var(--gold-grad);color:#fff;font-weight:600;font-size:16px;padding:17px 30px;border-radius:9px;display:inline-flex;align-items:center;gap:11px;box-shadow:0 14px 30px rgba(189,154,90,.3);transition:.2s}
+.cta-gold{background:var(--gold-grad);color:#fff;font-weight:600;font-size:14px;padding:13px 22px;border-radius:8px;display:inline-flex;align-items:center;gap:9px;box-shadow:0 10px 22px rgba(189,154,90,.3);transition:.2s}
 .cta-gold:hover{transform:translateY(-1px);filter:brightness(1.05)}
-.cta-out{border:1px solid rgba(255,255,255,.35);color:#fff;font-weight:600;font-size:16px;padding:17px 30px;border-radius:9px;display:inline-flex;align-items:center;gap:11px;transition:.2s}
+.cta-out{border:1px solid rgba(255,255,255,.35);color:#fff;font-weight:600;font-size:14px;padding:13px 22px;border-radius:8px;display:inline-flex;align-items:center;gap:9px;transition:.2s}
 .cta-out:hover{background:rgba(255,255,255,.08);border-color:#fff}
 
 /* ---------- FAQ ---------- */
@@ -305,7 +305,7 @@ footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
 html,body{font-family:'Montserrat',Arial,sans-serif!important;color:#212529!important}
 body{font-size:20px!important;line-height:30px!important;font-weight:500!important;background:#FFFFFF!important}
 h1,h2,h3,h4{font-family:'Neue Regrade','Montserrat',Arial,sans-serif!important;color:#212529!important;letter-spacing:0!important}
-h1,.hero h1{font-size:56px!important;line-height:62px!important;font-weight:800!important}
+h1,.hero h1{font-size:46px!important;line-height:53px!important;font-weight:800!important}
 .hero h1{color:#fff!important}
 h2,.range h2,.fit h2,.cta h2,.faq h2{font-size:48px!important;line-height:54px!important;font-weight:800!important}
 h3,.slide h3{font-size:32px!important;line-height:46px!important;font-weight:800!important}
@@ -319,6 +319,7 @@ p,.hero .lead,.range .intro,.range .outro,.slide p,.cta p,.faq-a p,.foot-about{f
 .label,.range-highlight-label,.foot-col h4{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:22px!important;font-weight:500!important;letter-spacing:0!important}
 .btn-consult,.get-started,.cta-gold,.cta-out{font-family:'Montserrat',Arial,sans-serif!important;font-size:16px!important;line-height:24px!important;font-weight:600!important;letter-spacing:0!important;text-transform:none}
 .get-started{text-transform:uppercase!important;font-size:14px!important}
+.cta-gold,.cta-out{font-size:14px!important;padding:13px 22px!important}
 .caption,.slide-img .cap{font-family:'Montserrat',Arial,sans-serif!important;font-size:10px!important;line-height:14px!important;font-weight:400!important}
 .hero h1 .accent,.label,.range-highlight-label,.read-more{color:#F18605!important}
 .rating b{color:#F18605!important}
@@ -749,7 +750,7 @@ function Faq(){
       <div className="wrap">
         <div className="label">Questions</div>
 
-        <h2>Local FAQs: Katy &amp; Cinco Ranch</h2>
+        <h2>FAQs for Katy &amp; Cinco Ranch</h2>
 
         <div className="faq-list">
           {visibleFaqs.map((f,i)=>(
