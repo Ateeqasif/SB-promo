@@ -106,8 +106,8 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero .lead{font-size:14px;color:rgba(255,255,255,.82);margin-top:8px;max-width:520px;line-height:1.45}
 .read-more.hero-read-more{display:flex;width:fit-content;margin-top:6px}
 .rating .g-word{font-weight:400}
-.offer-ribbon{position:relative;display:block;width:fit-content;margin-top:26px;filter:drop-shadow(0 6px 14px rgba(241,134,5,.4));pointer-events:none}
-.offer-ribbon-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:11px;color:#fff;text-align:center}
+.offer-ribbon{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:fit-content;margin-top:26px;padding:14px 26px;border-radius:8px;background:var(--gold-grad);box-shadow:0 8px 18px rgba(241,134,5,.4);pointer-events:none}
+.offer-ribbon-text{color:#fff;text-align:center}
 .offer-ribbon-text .l1{font-size:13px;font-weight:800;letter-spacing:.02em;line-height:1.1}
 .offer-ribbon-text .l2{font-size:8.5px;font-weight:700;letter-spacing:.03em;margin-top:2px;max-width:120px;line-height:1.3;text-transform:uppercase}
 
@@ -596,31 +596,9 @@ function ConsultForm(){
 }
 
 /* ---------- hero ---------- */
-function buildRibbonPath(w,h,tabW,tabBaseY,bodyBottomY,teeth){
-  const toothW = w/teeth;
-  let d = `M 0 ${tabBaseY} L ${tabW/2} 0 L ${tabW} ${tabBaseY} L ${w-tabW} ${tabBaseY} L ${w-tabW/2} 0 L ${w} ${tabBaseY} L ${w} ${bodyBottomY} `;
-  for(let i=0;i<teeth;i++){
-    const peakX = w - i*toothW;
-    const valleyX = peakX - toothW/2;
-    const nextPeakX = peakX - toothW;
-    d += `L ${valleyX} ${h} L ${nextPeakX} ${bodyBottomY} `;
-  }
-  d += `L 0 ${tabBaseY} Z`;
-  return d;
-}
 function OfferRibbon(){
-  const w=240, h=84, tabW=21, tabBaseY=13, bodyBottomY=68, teeth=6;
   return (
     <div className="offer-ribbon">
-      <svg viewBox={`0 0 ${w} ${h+6}`} width={w} height={h+6}>
-        <defs>
-          <linearGradient id="ribbonGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#F18605"/>
-            <stop offset="100%" stopColor="#E06D07"/>
-          </linearGradient>
-        </defs>
-        <path d={buildRibbonPath(w,h,tabW,tabBaseY,bodyBottomY,teeth)} fill="url(#ribbonGrad)"/>
-      </svg>
       <div className="offer-ribbon-text">
         <div className="l1">GET FREE</div>
         <div className="l2">In-Home Consultations</div>
