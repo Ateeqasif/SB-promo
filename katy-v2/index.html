@@ -166,7 +166,9 @@ section{position:relative}
 .slide-foot{display:flex;align-items:center;gap:20px;margin-top:38px}
 .arrow{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:#555;transition:.15s;background:#fff}
 .arrow:hover{border-color:var(--gold);color:var(--accent)}
-.explore{font-size:14px;color:#4a4a4a;font-weight:500}
+.explore{font-size:14px;color:#111;font-weight:500;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:.15s}
+.explore svg{width:14px;height:14px}
+.explore:hover{opacity:.75}
 .slide-img{position:relative;min-height:460px;background-size:cover;background-position:center}
 .slide-img .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 26px;color:#fff;font-weight:700;letter-spacing:.14em;font-size:14px;background:linear-gradient(0deg,rgba(0,0,0,.55),rgba(0,0,0,0))}
 
@@ -711,9 +713,9 @@ function Slider(){
                 <IcArrow/>
               </button>
 
-              <span className="explore">
-                Explore the collection
-              </span>
+              <a className="explore" href="https://slickblinds.com/products/shop-by-room/living-room/" target="_blank" rel="noopener noreferrer">
+                Explore the collection <IcArrow/>
+              </a>
 
             </div>
 
