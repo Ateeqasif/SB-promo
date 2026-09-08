@@ -95,7 +95,7 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero{position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center right;background-repeat:no-repeat}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,37,41,.82) 0%,rgba(33,37,41,.68) 30%,rgba(33,37,41,.40) 52%,rgba(33,37,41,.14) 78%,rgba(33,37,41,.02) 100%)}
-.hero-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;padding:35px 0 130px}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;padding:35px 0 45px}
 .rating{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:40px;padding:9px 18px;font-size:14px;color:#3b3b3b;box-shadow:0 6px 18px rgba(0,0,0,.05);margin-bottom:30px}
 .rating b{color:#4285F4;font-weight:600}
 .rating .star{color:#f5b800}
@@ -103,20 +103,9 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero h1 .accent{color:var(--accent)}
 .hero .sub{font-size:22px;font-weight:600;color:#fff;margin-top:10px;line-height:1.35;max-width:520px}
 .hero .lead{font-size:16px;color:rgba(255,255,255,.82);margin-top:18px;max-width:520px;line-height:1.7}
-.call-btn{display:inline-flex;align-items:center;gap:14px;background:var(--dark-grad);color:#fff;border-radius:12px;padding:14px 26px 14px 16px;margin-top:30px;box-shadow:0 12px 30px rgba(29,24,21,.28)}
-.call-btn .ic{width:42px;height:42px;border-radius:9px;background:rgba(255,255,255,.12);display:grid;place-items:center;flex:0 0 auto}
-.call-btn small{display:block;font-size:12px;color:#d9cdbd;letter-spacing:.04em}
-.call-btn strong{display:block;font-size:19px;font-weight:700;letter-spacing:.02em}
 .rating .g-word{font-weight:700}
-.win-badge{position:absolute;left:32px;bottom:26px;width:168px;height:168px;z-index:2}
-.win-badge svg{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 10px 24px rgba(0,0,0,.28))}
-.win-badge .wb-inner{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-bottom:22px}
-.win-badge .wb-stars{color:#c0392b;font-size:10px;letter-spacing:3px;margin-bottom:2px}
-.win-badge .wb-enter{font-size:10.5px;font-weight:700;letter-spacing:.06em;color:#5b5b5b;text-transform:uppercase}
-.win-badge .wb-win{font-size:22px;font-weight:800;color:#c0392b;line-height:1.1;margin-top:1px}
-.win-badge .wb-amt{font-size:26px;font-weight:800;color:#212529;line-height:1.05}
-.win-badge .wb-ribbon{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);background:linear-gradient(180deg,#d64533,#a8281a);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:5px 14px;white-space:nowrap;clip-path:polygon(6% 0,94% 0,100% 50%,94% 100%,6% 100%,0 50%);box-shadow:0 4px 10px rgba(0,0,0,.25)}
-@media(max-width:980px){.win-badge{display:none}}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--gold-grad);color:#fff;font-weight:700;font-size:16px;padding:16px 32px;border-radius:10px;margin-top:30px;box-shadow:0 14px 30px rgba(189,154,90,.32);transition:.2s}
+.hero-cta:hover{filter:brightness(1.04);transform:translateY(-1px)}
 
 /* ---------- FORM CARD ---------- */
 .form-card{background:#fff;border:1px solid var(--line-2);border-radius:16px;box-shadow:0 30px 70px rgba(29,24,21,.12);padding:34px}
@@ -250,7 +239,7 @@ footer.site{background:var(--dark-2);color:#cfc6bb;padding:72px 0 0}
 @media(max-width:640px){
   .foot-grid{grid-template-columns:1fr 1fr}
   .foot-about{max-width:100%}
-  .call-btn{width:100%}
+  .hero-cta{width:100%;justify-content:center}
   .faq-q{font-size:15.5px;padding:18px 20px}
   .faq-a{padding:0 20px}
   .cta-btns{flex-direction:column;align-items:stretch}
@@ -330,7 +319,7 @@ p,.hero .lead,.range .intro,.range .outro,.slide p,.cta p,.faq-a p,.foot-about{f
 .label,.range-highlight-label,.foot-col h4{font-family:'Montserrat',Arial,sans-serif!important;font-size:14px!important;line-height:22px!important;font-weight:500!important;letter-spacing:0!important}
 .btn-consult,.get-started,.cta-gold,.cta-out{font-family:'Montserrat',Arial,sans-serif!important;font-size:16px!important;line-height:24px!important;font-weight:600!important;letter-spacing:0!important;text-transform:none}
 .get-started{text-transform:uppercase!important;font-size:14px!important}
-.caption,.slide-img .cap,.call-btn small{font-family:'Montserrat',Arial,sans-serif!important;font-size:10px!important;line-height:14px!important;font-weight:400!important}
+.caption,.slide-img .cap{font-family:'Montserrat',Arial,sans-serif!important;font-size:10px!important;line-height:14px!important;font-weight:400!important}
 .hero h1 .accent,.label,.range-highlight-label,.read-more{color:#F18605!important}
 .rating b{color:#F18605!important}
 .rating .star{color:#FFB703!important}
@@ -568,38 +557,10 @@ function ConsultForm(){
 }
 
 /* ---------- hero ---------- */
-function buildSeal(bumps, rOuter, rBump){
-  const cx=100, cy=100;
-  const step=(Math.PI*2)/bumps;
-  let d="";
-  for(let i=0;i<bumps;i++){
-    const a0=i*step-Math.PI/2, a1=a0+step, am=(a0+a1)/2;
-    const x0=cx+rOuter*Math.cos(a0), y0=cy+rOuter*Math.sin(a0);
-    const x1=cx+rOuter*Math.cos(a1), y1=cy+rOuter*Math.sin(a1);
-    const xm=cx+(rOuter+rBump)*Math.cos(am), ym=cy+(rOuter+rBump)*Math.sin(am);
-    d += (i===0? `M ${x0} ${y0} ` : "") + `Q ${xm} ${ym} ${x1} ${y1} `;
-  }
-  return d+"Z";
-}
-function WinBadge(){
-  return (
-    <div className="win-badge">
-      <svg viewBox="0 0 200 200"><path d={buildSeal(20,78,13)} fill="#fff"/></svg>
-      <div className="wb-inner">
-        <div className="wb-stars">★ ★ ★</div>
-        <div className="wb-enter">Enter and</div>
-        <div className="wb-win">WIN</div>
-        <div className="wb-amt">$1500</div>
-      </div>
-      <div className="wb-ribbon">Worth of Blinds</div>
-    </div>
-  );
-}
 function Hero(){
   return (
     <section id="about" className="hero">
       <div className="hero-bg" style={{backgroundImage:"url("+HERO_IMG+")"}}/>
-      <WinBadge/>
       <div className="wrap">
         <div className="hero-inner">
           <div>
@@ -611,10 +572,7 @@ function Hero(){
             <p className="lead">Your windows are part of how your home feels throughout the day. We help homeowners in Katy and Cinco Ranch choose custom blinds and shades that bring together light control, privacy, comfort and design.</p>
              <p className="lead">From large living-room windows and two-story spaces to bedrooms that need better light control, every treatment is measured and made for the window it belongs to.
 </p>
-            <a className="call-btn" href={"tel:"+PHONE}>
-              <span className="ic"><IcPhone s={20}/></span>
-              <span><small>Call us on</small><strong>{PHONE}</strong></span>
-            </a>
+            <a className="hero-cta" href="#consult">Book Now <IcArrow/></a>
           </div>
           <ConsultForm/>
         </div>
