@@ -106,7 +106,7 @@ header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px s
 .hero .lead{font-size:14px;color:rgba(255,255,255,.82);margin-top:8px;max-width:520px;line-height:1.45}
 .read-more.hero-read-more{display:flex;width:fit-content;margin-top:6px}
 .rating .g-word{font-weight:400}
-.offer-ribbon{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:fit-content;margin-top:26px;padding:14px 26px;border-radius:8px;background:var(--gold-grad);box-shadow:0 8px 18px rgba(241,134,5,.4);pointer-events:none}
+.offer-ribbon{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:fit-content;margin-top:26px;padding:14px 26px;border-radius:8px;background:var(--gold-grad);box-shadow:0 8px 18px rgba(241,134,5,.4);cursor:pointer}
 .offer-ribbon-text{color:#fff;text-align:center}
 .offer-ribbon-text .l1{font-size:13px;font-weight:800;letter-spacing:.02em;line-height:1.1}
 .offer-ribbon-text .l2{font-size:8.5px;font-weight:700;letter-spacing:.03em;margin-top:2px;white-space:nowrap;line-height:1.3;text-transform:uppercase}
@@ -573,7 +573,7 @@ function ConsultForm(){
         </div>
         <div className="err">{err.interest}</div>
         <div className="fc-q">Your area helps us serve you better</div>
-        <div className="field"><span className="fic"><IcHome/></span><input placeholder="Address Line" value={f.address} onChange={set("address")}/></div>
+        <div className="field"><span className="fic"><IcHome/></span><input id="hero-address-input" placeholder="Address Line" value={f.address} onChange={set("address")}/></div>
         <div className="err">{err.address}</div>
         <div className="field"><span className="fic"><IcPin/></span><input placeholder="Zipcode" value={f.zip} onChange={set("zip")}/></div>
         <div className="err">{err.zip}</div>
@@ -599,8 +599,20 @@ function ConsultForm(){
 
 /* ---------- hero ---------- */
 function OfferRibbon(){
+  const goToAddress=()=>{
+    const card=document.getElementById("consult");
+    if(card) card.scrollIntoView({behavior:"smooth",block:"center"});
+    const input=document.getElementById("hero-address-input");
+    if(input) setTimeout(()=>input.focus(),450);
+  };
   return (
-    <div className="offer-ribbon">
+    <div
+      className="offer-ribbon"
+      onClick={goToAddress}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e)=>{if(e.key==="Enter"||e.key===" ") goToAddress();}}
+    >
       <div className="offer-ribbon-text">
         <div className="l1">GET FREE</div>
         <div className="l2">In-Home Consultations</div>
